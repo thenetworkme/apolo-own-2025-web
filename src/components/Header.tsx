@@ -14,7 +14,7 @@ export default function Header() {
     >
       {/* Logo - Top Left with spacing */}
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-10">
-        <div className="relative w-20 h-10 sm:w-28 sm:h-14 md:w-36 md:h-18">
+        <div className="header-logo relative w-28 h-14 sm:w-28 sm:h-14 md:w-36 md:h-18">
           <Image
             src="/images/Apolo 27 HP - blanco.png"
             alt="Apolo 27 Logo"

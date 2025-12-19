@@ -67,75 +67,61 @@ export default function CountdownTimer() {
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className=""
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="w-full"
         >
-            {/* Frame/Bracket Container */}
+            {/* Clean Container - No background, full width */}
             <div
-                className="relative inline-flex items-center backdrop-blur-sm bg-black/20 rounded-lg px-4 py-3"
-                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
+                className="relative w-full flex items-center justify-between"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
             >
-                {/* Left Bracket */}
-                <div className="flex flex-col justify-between h-12 sm:h-14 md:h-16 mr-3 sm:mr-4">
-                    <div className="w-3 sm:w-4 h-[2px] bg-white/60"></div>
-                    <div className="w-[2px] h-full bg-white/60 absolute left-0"></div>
-                    <div className="w-3 sm:w-4 h-[2px] bg-white/60"></div>
-                </div>
-
-                {/* Countdown Content */}
-                <div className="flex items-center gap-3 sm:gap-4 md:gap-6 px-2">
+                {/* Countdown Content - Much Larger */}
+                <div className="flex items-center justify-between w-full">
                     {/* Days */}
                     <div className="flex flex-col items-center">
-                        <span className="text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-wider">
+                        <span className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider">
                             {formatNumber(timeLeft.days)}
                         </span>
-                        <span className="text-white/50 text-[8px] sm:text-[10px] md:text-xs tracking-widest mt-1">
+                        <span className="text-white/50 text-xs sm:text-sm md:text-base lg:text-lg tracking-widest mt-2 sm:mt-3">
                             {currentLabels.days}
                         </span>
                     </div>
 
-                    <span className="text-white/40 text-lg sm:text-xl md:text-2xl font-light">:</span>
+                    <span className="text-white/30 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light">:</span>
 
                     {/* Hours */}
                     <div className="flex flex-col items-center">
-                        <span className="text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-wider">
+                        <span className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider">
                             {formatNumber(timeLeft.hours)}
                         </span>
-                        <span className="text-white/50 text-[8px] sm:text-[10px] md:text-xs tracking-widest mt-1">
+                        <span className="text-white/50 text-xs sm:text-sm md:text-base lg:text-lg tracking-widest mt-2 sm:mt-3">
                             {currentLabels.hours}
                         </span>
                     </div>
 
-                    <span className="text-white/40 text-lg sm:text-xl md:text-2xl font-light">:</span>
+                    <span className="text-white/30 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light">:</span>
 
                     {/* Minutes */}
                     <div className="flex flex-col items-center">
-                        <span className="text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-wider">
+                        <span className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider">
                             {formatNumber(timeLeft.minutes)}
                         </span>
-                        <span className="text-white/50 text-[8px] sm:text-[10px] md:text-xs tracking-widest mt-1">
+                        <span className="text-white/50 text-xs sm:text-sm md:text-base lg:text-lg tracking-widest mt-2 sm:mt-3">
                             {currentLabels.minutes}
                         </span>
                     </div>
 
-                    <span className="text-white/40 text-lg sm:text-xl md:text-2xl font-light">:</span>
+                    <span className="text-white/30 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light">:</span>
 
                     {/* Seconds */}
                     <div className="flex flex-col items-center">
-                        <span className="text-white text-xl sm:text-2xl md:text-3xl font-bold tracking-wider">
+                        <span className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wider">
                             {formatNumber(timeLeft.seconds)}
                         </span>
-                        <span className="text-white/50 text-[8px] sm:text-[10px] md:text-xs tracking-widest mt-1">
+                        <span className="text-white/50 text-xs sm:text-sm md:text-base lg:text-lg tracking-widest mt-2 sm:mt-3">
                             {currentLabels.seconds}
                         </span>
                     </div>
-                </div>
-
-                {/* Right Bracket */}
-                <div className="flex flex-col justify-between h-12 sm:h-14 md:h-16 ml-3 sm:ml-4 relative">
-                    <div className="w-3 sm:w-4 h-[2px] bg-white/60"></div>
-                    <div className="w-[2px] h-full bg-white/60 absolute right-0"></div>
-                    <div className="w-3 sm:w-4 h-[2px] bg-white/60"></div>
                 </div>
             </div>
         </motion.div>

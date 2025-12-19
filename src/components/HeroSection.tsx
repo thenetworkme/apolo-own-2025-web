@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import CountdownTimer from './CountdownTimer';
 
 // Animation variants for staggered children
 const containerVariants = {
@@ -69,6 +68,8 @@ export default function HeroSection() {
                 </video>
                 {/* Dark overlay - stronger for better readability */}
                 <div className="absolute inset-0 bg-black/60 sm:bg-black/55 md:bg-black/50"></div>
+                {/* Bottom fade gradient - smooth transition to next section */}
+                <div className="absolute bottom-0 left-0 right-0 h-48 sm:h-56 md:h-64 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
             </motion.div>
 
             {/* Astronaut - Floating animation */}
@@ -152,23 +153,32 @@ export default function HeroSection() {
                     >
                         {t('hero.title')}
                     </motion.h1>
+                </motion.div>
 
-                    {/* Bottom Row: Description + Countdown side by side */}
-                    <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-12 mt-6 sm:mt-8 md:mt-12" style={{ width: '100%', maxWidth: '1200px' }}>
-                        {/* Description Text */}
+                {/* Scroll Indicator - Mouse Icon */}
+                <motion.div
+                    className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.5 }}
+                >
+                    {/* Mouse outline */}
+                    <motion.div
+                        className="w-6 h-10 sm:w-7 sm:h-11 border-2 border-white/50 rounded-full flex justify-center pt-2"
+                        animate={{ y: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        {/* Scroll wheel/dot */}
                         <motion.div
-                            variants={itemVariants}
-                            className="text-white text-xs sm:text-sm md:text-base leading-relaxed"
-                            style={{ width: '100%', maxWidth: '750px', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
-                        >
-                            <p>
-                                {t('hero.description')}
-                            </p>
-                        </motion.div>
-
-                        {/* Countdown Timer */}
-                        <CountdownTimer />
-                    </div>
+                            className="w-1 h-2 sm:w-1.5 sm:h-2.5 bg-white/70 rounded-full"
+                            animate={{ y: [0, 6, 0], opacity: [1, 0.3, 1] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                        />
+                    </motion.div>
+                    {/* Scroll text */}
+                    <span className="text-white/40 text-[10px] sm:text-xs tracking-widest uppercase">
+                        Scroll
+                    </span>
                 </motion.div>
             </div>
         </section>
