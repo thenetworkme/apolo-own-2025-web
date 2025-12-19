@@ -59,3 +59,70 @@ body {
   background: #3b82f6;
   color: #000000;
 }
+
+/* ================================
+   MOBILE-SPECIFIC STYLES
+   ================================ */
+
+/* Hero Section Mobile Adjustments */
+@media (max-width: 639px) {
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-title {
+    font-size: 13vw !important;
+    line-height: 0.9;
+    margin-top: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+}
+
+/* Extra small devices (phones, 375px and down) */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 12vw !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+}
+
+/* Medium mobile devices (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+  .hero-title {
+    font-size: 14vw !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+}

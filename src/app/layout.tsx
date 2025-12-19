@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Dancing_Script } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,8 +20,8 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Return to the Moon | NASA 50th Anniversary 1969-2019",
-  description: "Celebrating 50 years of the Apollo 11 Moon landing. Fifty years ago astronauts walked on the moon for the first time, showcasing humankind's moxie and ingenuity.",
+  title: "APOLO 27 | NASA Human Exploration Rover Challenge",
+  description: "Equipo de estudiantes de INTEC, República Dominicana, compitiendo en el NASA Human Exploration Rover Challenge. Segundo lugar mundial en 2024.",
 };
 
 export default function RootLayout({
@@ -29,13 +30,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
 }
-

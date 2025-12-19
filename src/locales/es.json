@@ -1,0 +1,19 @@
+{
+    "hero": {
+        "since": "Desde 2019",
+        "meetThe": "Conoce",
+        "crew": "al equipo",
+        "title": "APOLO 27",
+        "description": "Somos un equipo de estudiantes de INTEC, República Dominicana, que compite en el NASA Human Exploration Rover Challenge. Segundo lugar mundial en 2024 y primer equipo latinoamericano en alcanzar el podio. Diseñamos y construimos rovers para la exploración espacial del futuro."
+    },
+    "nav": {
+        "home": "Inicio",
+        "about": "Nosotros",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+    },
+    "language": {
+        "es": "ESP",
+        "en": "ENG"
+    }
+}
