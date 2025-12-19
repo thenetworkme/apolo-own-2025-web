@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
+import CountdownTimer from './CountdownTimer';
 
 // Animation variants for staggered children
 const containerVariants = {
@@ -64,10 +65,10 @@ export default function HeroSection() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
                 >
-                    <source src="/videos/Marte1.mp4" type="video/mp4" />
+                    <source src="/videos/moon_cinematic.mp4" type="video/mp4" />
                 </video>
-                {/* Dark overlay - stronger on mobile for better readability */}
-                <div className="absolute inset-0 bg-black/50 sm:bg-black/40 md:bg-black/30"></div>
+                {/* Dark overlay - stronger for better readability */}
+                <div className="absolute inset-0 bg-black/60 sm:bg-black/55 md:bg-black/50"></div>
             </motion.div>
 
             {/* Astronaut - Floating animation */}
@@ -152,15 +153,22 @@ export default function HeroSection() {
                         {t('hero.title')}
                     </motion.h1>
 
-                    {/* Description Text - Responsive */}
-                    <motion.div
-                        variants={itemVariants}
-                        className="hero-description w-full max-w-[90vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-[1350px] text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed mt-4 sm:mt-8 md:mt-12"
-                    >
-                        <p>
-                            {t('hero.description')}
-                        </p>
-                    </motion.div>
+                    {/* Bottom Row: Description + Countdown side by side */}
+                    <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 md:gap-12 mt-6 sm:mt-8 md:mt-12" style={{ width: '100%', maxWidth: '1200px' }}>
+                        {/* Description Text */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="text-white text-xs sm:text-sm md:text-base leading-relaxed"
+                            style={{ width: '100%', maxWidth: '750px', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
+                        >
+                            <p>
+                                {t('hero.description')}
+                            </p>
+                        </motion.div>
+
+                        {/* Countdown Timer */}
+                        <CountdownTimer />
+                    </div>
                 </motion.div>
             </div>
         </section>
