@@ -16,5 +16,14 @@
     "language": {
         "es": "ESP",
         "en": "ENG"
+    },
+    "sponsors": {
+        "subtitle": "Impulsando nuestra misión",
+        "title": "Quienes hacen posible el sueño"
+    },
+    "social": {
+        "subtitle": "Únete a nuestra misión",
+        "title": "Síguenos en el Viaje",
+        "description": "Sé parte de nuestra comunidad y acompáñanos mientras llevamos a República Dominicana al espacio"
     }
 }

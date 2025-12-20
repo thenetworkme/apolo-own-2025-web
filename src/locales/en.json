@@ -16,5 +16,14 @@
     "language": {
         "es": "ESP",
         "en": "ENG"
+    },
+    "sponsors": {
+        "subtitle": "Driving our mission",
+        "title": "Those who make the dream possible"
+    },
+    "social": {
+        "subtitle": "Join our mission",
+        "title": "Follow Our Journey",
+        "description": "Be part of our community and join us as we take the Dominican Republic to space"
     }
 }
