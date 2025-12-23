@@ -34,6 +34,7 @@ export default function SaveTheDateSection() {
 
     return (
         <section
+            id="save-the-date"
             ref={sectionRef}
             className="relative w-full py-32 sm:py-40 md:py-48 lg:py-56 bg-black overflow-hidden"
         >

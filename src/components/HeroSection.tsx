@@ -49,7 +49,7 @@ export default function HeroSection() {
     const { t } = useLanguage();
 
     return (
-        <section className="relative w-full h-screen overflow-hidden bg-black">
+        <section id="hero" className="relative w-full h-screen overflow-hidden bg-black">
             {/* Video Background - Mars (scaled to hide watermark) */}
             <motion.div
                 initial={{ opacity: 0, scale: 1.2 }}
@@ -153,32 +153,6 @@ export default function HeroSection() {
                     >
                         {t('hero.title')}
                     </motion.h1>
-                </motion.div>
-
-                {/* Scroll Indicator - Mouse Icon */}
-                <motion.div
-                    className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.5 }}
-                >
-                    {/* Mouse outline */}
-                    <motion.div
-                        className="w-6 h-10 sm:w-7 sm:h-11 border-2 border-white/50 rounded-full flex justify-center pt-2"
-                        animate={{ y: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                        {/* Scroll wheel/dot */}
-                        <motion.div
-                            className="w-1 h-2 sm:w-1.5 sm:h-2.5 bg-white/70 rounded-full"
-                            animate={{ y: [0, 6, 0], opacity: [1, 0.3, 1] }}
-                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        />
-                    </motion.div>
-                    {/* Scroll text */}
-                    <span className="text-white/40 text-[10px] sm:text-xs tracking-widest uppercase">
-                        Scroll
-                    </span>
                 </motion.div>
             </div>
         </section>

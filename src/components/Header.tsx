@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
+import NavigationMenu from './NavigationMenu';
 
 export default function Header() {
   return (
@@ -25,9 +26,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Language Switcher - Top Right with spacing */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-10">
+      {/* Right Side Controls - Language Switcher & Navigation Menu */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-10 flex items-center gap-3 sm:gap-4">
         <LanguageSwitcher />
+        <NavigationMenu />
       </div>
     </motion.header>
   );

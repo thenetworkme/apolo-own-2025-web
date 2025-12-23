@@ -47,6 +47,7 @@ export default function SponsorsSection() {
 
     return (
         <section
+            id="sponsors"
             ref={sectionRef}
             className="relative w-full py-20 sm:py-24 md:py-32 bg-black overflow-hidden"
         >
@@ -93,7 +94,7 @@ export default function SponsorsSection() {
                                             src={sponsor.logo}
                                             alt={sponsor.name}
                                             fill
-                                            className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            className="object-contain filter hover:grayscale transition-all duration-300"
                                             sizes="(max-width: 640px) 100px, (max-width: 768px) 130px, (max-width: 1024px) 160px, 200px"
                                         />
                                     </div>
@@ -110,7 +111,7 @@ export default function SponsorsSection() {
                                             src={sponsor.logo}
                                             alt={sponsor.name}
                                             fill
-                                            className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                                            className="object-contain filter hover:grayscale transition-all duration-300"
                                             sizes="(max-width: 640px) 100px, (max-width: 768px) 130px, (max-width: 1024px) 160px, 200px"
                                         />
                                     </div>

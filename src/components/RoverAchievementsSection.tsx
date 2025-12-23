@@ -19,6 +19,7 @@ export default function RoverAchievementsSection() {
 
     return (
         <section
+            id="achievements"
             ref={sectionRef}
             className="relative w-full py-8 sm:py-12 md:py-16 bg-black overflow-hidden"
         >

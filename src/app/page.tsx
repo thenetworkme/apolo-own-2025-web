@@ -6,7 +6,9 @@ import RoverAchievementsSection from "@/components/RoverAchievementsSection";
 import RoverRoadmapSection from "@/components/RoverRoadmapSection";
 import SponsorsSection from "@/components/SponsorsSection";
 import SocialMediaSection from "@/components/SocialMediaSection";
-import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { Meteors } from "@/components/ui/meteors";
+import { DotPattern } from "@/components/ui/dot-pattern";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -14,24 +16,23 @@ export default function Home() {
       <Header />
       <HeroSection />
 
-      {/* Sections with Animated Grid Pattern Background */}
-      <div className="relative">
-        {/* Animated Grid Pattern - visible on all sections after Hero */}
+      {/* Sections with Meteors + Dot Pattern Background */}
+      <div className="relative overflow-hidden">
+        {/* Dot Pattern Background - subtle grid effect */}
+
+
+        {/* Meteors - falling stars effect */}
 
 
         <div className="relative z-10">
+          <div className="absolute inset-0 z-[1] overflow-hidden">
+            <Meteors number={5} />
+          </div>
           <SaveTheDateSection />
           <RoverAchievementsSection />
-          <AnimatedGridPattern
-            className=" fill-red-500/10 stroke-zinc-500/20 [mask-image:radial-gradient(800px_circle_at_center,white,transparent)]"
-            numSquares={50}
-            maxOpacity={1}
-            duration={4}
-            width={50}
-            height={350}
-          />
           {/* <RoverRoadmapSection /> */}
           <SponsorsSection />
+
           <SocialMediaSection />
         </div>
       </div>
