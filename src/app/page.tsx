@@ -6,6 +6,7 @@ import RoverAchievementsSection from "@/components/RoverAchievementsSection";
 import RoverRoadmapSection from "@/components/RoverRoadmapSection";
 import SponsorsSection from "@/components/SponsorsSection";
 import SocialMediaSection from "@/components/SocialMediaSection";
+import Footer from "@/components/Footer";
 import { Meteors } from "@/components/ui/meteors";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
@@ -36,6 +37,9 @@ export default function Home() {
           <SocialMediaSection />
         </div>
       </div>
+
+      {/* Footer with Globe */}
+      <Footer />
 
       {/* Slide Navigation Dots */}
       {/* <SlideIndicator totalSlides={4} currentSlide={0} /> */}

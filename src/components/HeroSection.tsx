@@ -72,7 +72,7 @@ export default function HeroSection() {
                 <div className="absolute bottom-0 left-0 right-0 h-48 sm:h-56 md:h-64 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
             </motion.div>
 
-            {/* Astronaut - Floating animation */}
+            {/* Astronaut - Floating animation - Offset to the right */}
             <motion.div
                 variants={astronautVariants}
                 initial="hidden"
@@ -80,7 +80,7 @@ export default function HeroSection() {
                 className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
             >
                 <motion.div
-                    className="relative w-[65vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] aspect-[3/4] mt-0 sm:mt-[-5vh] md:mt-[-10vh]"
+                    className="relative w-[65vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] aspect-[3/4] mt-0 sm:mt-[-5vh] md:mt-[-10vh] translate-x-[10%] sm:translate-x-[15%] md:translate-x-[20%]"
                     animate={{
                         y: [0, -15, 0],
                         rotate: [0, 1, 0, -1, 0]

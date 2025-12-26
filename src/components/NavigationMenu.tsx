@@ -132,17 +132,12 @@ export default function NavigationMenu() {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.1 + index * 0.08 }}
                                     >
-                                        {/* Divider Line - Top of each item except first */}
-                                        {index > 0 && (
-                                            <div className="w-full h-px bg-white/10 mb-4" />
-                                        )}
-
                                         <button
                                             onClick={() => handleNavClick(item.id)}
-                                            className="group relative text-left w-full py-4 sm:py-5 mb-2"
+                                            className="group relative text-left w-full py-3 sm:py-4"
                                         >
-                                            <div className="flex items-center gap-3">
-                                                <span className={`text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight transition-colors duration-300 ${activeItem === item.id
+                                            <div className="flex items-center gap-2 sm:gap-3">
+                                                <span className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight transition-colors duration-300 ${activeItem === item.id
                                                     ? 'text-white'
                                                     : 'text-white/30 group-hover:text-white/80'
                                                     }`}>
@@ -152,7 +147,7 @@ export default function NavigationMenu() {
                                                 {activeItem === item.id && (
                                                     <motion.span
                                                         layoutId="activeIndicator"
-                                                        className="ml-3 w-2.5 h-2.5 bg-red-500 flex-shrink-0"
+                                                        className="ml-2 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-500 flex-shrink-0"
                                                         initial={false}
                                                         transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                                     />
