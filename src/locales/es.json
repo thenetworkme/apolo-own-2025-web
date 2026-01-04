@@ -25,5 +25,12 @@
         "subtitle": "Únete a nuestra misión",
         "title": "Síguenos en el Viaje",
         "description": "Sé parte de nuestra comunidad y acompáñanos mientras llevamos a República Dominicana al espacio"
+    },
+    "footer": {
+        "headerText": "Juntos hacia las estrellas",
+        "title": "Sé parte de la misión",
+        "subtitle": "Únete a APOLO 27 y ayúdanos a inspirar a la próxima generación de exploradores espaciales",
+        "sponsorButton": "Conviértete en Sponsor",
+        "stemButton": "Solicita una Visita STEM"
     }
 }

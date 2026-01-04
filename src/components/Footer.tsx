@@ -1,13 +1,58 @@
 'use client';
 
 import { Globe } from '@/components/ui/globe';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+    const { t } = useLanguage();
+
     return (
-        <section className="relative w-full bg-black overflow-hidden py-12 sm:py-16">
-            {/* Globe Section - Centered and Larger */}
-            <div className="relative z-10 flex items-center justify-center">
-                <div className="relative h-[400px] sm:h-[500px] md:h-[600px] w-full max-w-[700px]">
+        <section className="footer-section relative w-full bg-black overflow-hidden">
+
+            {/* Centered Header Text */}
+            <div className="footer-header-container absolute w-full z-30">
+                <p
+                    className="footer-header-text text-white italic text-center"
+                    style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                >
+                    {t('footer.headerText')}
+                </p>
+            </div>
+
+            {/* Left Side - Title and CTA Buttons */}
+            <div className="footer-content absolute z-20">
+                {/* Title and Subtitle */}
+                <div className="footer-text-block">
+                    <h2 className="footer-title text-white font-bold tracking-tight">
+                        {t('footer.title')}
+                    </h2>
+                    <p className="footer-subtitle text-gray-400 leading-relaxed">
+                        {t('footer.subtitle')}
+                    </p>
+                </div>
+
+                {/* Buttons - Vertical stack */}
+                <div className="footer-buttons flex flex-col gap-2 sm:gap-3">
+                    <a
+                        href="#sponsor"
+                        className="footer-btn group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400"
+                    >
+                        <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+                        <span className="relative z-10">{t('footer.sponsorButton')}</span>
+                    </a>
+                    <a
+                        href="#stem-visit"
+                        className="footer-btn group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400"
+                    >
+                        <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+                        <span className="relative z-10">{t('footer.stemButton')}</span>
+                    </a>
+                </div>
+            </div>
+
+            {/* Globe - Right side, only top half visible */}
+            <div className="footer-globe-container absolute overflow-hidden">
+                <div className="footer-globe-inner absolute left-1/2 -translate-x-1/2">
                     <Globe
                         config={{
                             width: 1000,
