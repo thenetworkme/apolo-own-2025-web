@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import ScrollRevealSection from "@/components/ScrollRevealSection";
 import Header from "@/components/Header";
 import SlideIndicator from "@/components/SlideIndicator";
 import SaveTheDateSection from "@/components/SaveTheDateSection";
@@ -6,6 +7,7 @@ import RoverAchievementsSection from "@/components/RoverAchievementsSection";
 import RoverRoadmapSection from "@/components/RoverRoadmapSection";
 import SponsorsSection from "@/components/SponsorsSection";
 import SocialMediaSection from "@/components/SocialMediaSection";
+import STEMSection from "@/components/STEMSection";
 import Footer from "@/components/Footer";
 import { Meteors } from "@/components/ui/meteors";
 import { DotPattern } from "@/components/ui/dot-pattern";
@@ -16,6 +18,9 @@ export default function Home() {
     <main className="relative min-h-screen bg-black">
       <Header />
       <HeroSection />
+
+      {/* Scroll Reveal Section - Immersive text animation */}
+      <ScrollRevealSection />
 
       {/* Sections with Meteors + Dot Pattern Background */}
       <div className="relative overflow-hidden">
@@ -37,6 +42,9 @@ export default function Home() {
           <SocialMediaSection />
         </div>
       </div>
+
+      {/* STEM Section with 3D Marquee */}
+      <STEMSection />
 
       {/* Footer with Globe */}
       <Footer />

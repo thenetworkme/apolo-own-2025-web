@@ -147,7 +147,7 @@ export default function RoverRoadmapSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full py-24 sm:py-32 md:py-40 bg-black overflow-hidden"
+            className="section-spacing relative w-full bg-black overflow-hidden"
         >
             {/* Section Header */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 lg:mb-32">
