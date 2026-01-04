@@ -50,11 +50,11 @@ export default function HeroSection() {
 
     return (
         <section id="hero" className="relative w-full h-screen overflow-hidden bg-black">
-            {/* Video Background - Mars (scaled to hide watermark) */}
+            {/* Video Background - Optimized for fast loading */}
             <motion.div
-                initial={{ opacity: 0, scale: 1.2 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 2, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
                 className="absolute inset-0 z-0 overflow-hidden"
             >
                 <video
@@ -62,6 +62,8 @@ export default function HeroSection() {
                     loop
                     muted
                     playsInline
+                    preload="auto"
+                    poster="/images/moon_poster.jpg"
                     className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
                 >
                     <source src="/videos/moon_cinematic.mp4" type="video/mp4" />
@@ -155,6 +157,6 @@ export default function HeroSection() {
                     </motion.h1>
                 </motion.div>
             </div>
-        </section>
+        </section >
     );
 }
