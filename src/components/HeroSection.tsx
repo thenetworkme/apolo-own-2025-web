@@ -80,7 +80,7 @@ export default function HeroSection() {
                 className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none"
             >
                 <motion.div
-                    className="relative w-[65vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] aspect-[3/4] mt-0 sm:mt-[-5vh] md:mt-[-10vh] translate-x-[10%] sm:translate-x-[15%] md:translate-x-[20%]"
+                    className="relative w-[65vw] sm:w-[70vw] md:w-[55vw] lg:w-[45vw] aspect-[3/4] mt-0 sm:mt-[-5vh] md:mt-[-10vh] translate-x-[20%] sm:translate-x-[25%] md:translate-x-[30%] lg:translate-x-[35%]"
                     animate={{
                         y: [0, -15, 0],
                         rotate: [0, 1, 0, -1, 0]
