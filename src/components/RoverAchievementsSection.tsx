@@ -68,7 +68,7 @@ export default function RoverAchievementsSection() {
         <section
             id="achievements"
             ref={sectionRef}
-            className="relative w-full py-16 sm:py-20 md:py-28 bg-black overflow-hidden"
+            className="section-spacing relative w-full bg-black overflow-hidden"
         >
             {/* Background gradient accent */}
             <div className="absolute inset-0 pointer-events-none">
