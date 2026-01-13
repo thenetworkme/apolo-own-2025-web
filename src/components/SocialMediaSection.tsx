@@ -4,6 +4,8 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { OrbitingCircles } from '@/components/ui/orbiting-circles';
 import { useLanguage } from '@/context/LanguageContext';
+import Marquee from '@/components/ui/Marquee';
+import TestimonialCard from '@/components/TestimonialCard';
 import {
     FaInstagram,
     FaTiktok,
@@ -49,10 +51,59 @@ const orbitVariants = {
     }
 };
 
+// Testimonials data with gradient colors
+const testimonials = [
+    {
+        name: "María",
+        username: "maria",
+        quote: "I don't know what to say. I'm speechless. This is amazing.",
+        gradientFrom: "from-pink-500",
+        gradientTo: "to-violet-500"
+    },
+    {
+        name: "Carlos",
+        username: "carlos",
+        quote: "I'm at a loss for words. This is amazing. I love it.",
+        gradientFrom: "from-green-500",
+        gradientTo: "to-emerald-500"
+    },
+    {
+        name: "Ana",
+        username: "ana",
+        quote: "I've never seen anything like this before. It's amazing. I love it.",
+        gradientFrom: "from-orange-500",
+        gradientTo: "to-yellow-500"
+    },
+    {
+        name: "Pedro",
+        username: "pedro",
+        quote: "I'm at a loss for words. This is amazing. I love it.",
+        gradientFrom: "from-blue-500",
+        gradientTo: "to-cyan-500"
+    },
+    {
+        name: "Laura",
+        username: "laura",
+        quote: "I'm at a loss for words. This is amazing. I love it.",
+        gradientFrom: "from-red-500",
+        gradientTo: "to-pink-500"
+    },
+    {
+        name: "Roberto",
+        username: "roberto",
+        quote: "I'm at a loss for words. This is amazing. I love it.",
+        gradientFrom: "from-purple-500",
+        gradientTo: "to-indigo-500"
+    }
+];
+
 export default function SocialMediaSection() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
+    const firstRow = testimonials.slice(0, 3);
+    const secondRow = testimonials.slice(3);
 
     return (
         <section
@@ -92,12 +143,12 @@ export default function SocialMediaSection() {
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                     >
-                        <div className="relative aspect-square h-[450px] sm:h-[500px] flex items-center justify-center">
+                        <div className="relative aspect-square h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center scale-[0.65] sm:scale-75 md:scale-90 lg:scale-100">
 
                             {/* Outer orbit - LinkedIn and YouTube */}
                             <OrbitingCircles
                                 iconSize={50}
-                                radius={200}
+                                radius={180}
                                 duration={30}
                                 path={true}
                             >
@@ -122,7 +173,7 @@ export default function SocialMediaSection() {
                             {/* Middle orbit - Instagram and TikTok */}
                             <OrbitingCircles
                                 iconSize={40}
-                                radius={130}
+                                radius={110}
                                 reverse
                                 speed={1.5}
                                 duration={25}
@@ -149,7 +200,7 @@ export default function SocialMediaSection() {
                             {/* Inner orbit - Empty decorative */}
                             <OrbitingCircles
                                 iconSize={20}
-                                radius={50}
+                                radius={40}
                                 duration={20}
                                 path={true}
                             >
@@ -158,6 +209,54 @@ export default function SocialMediaSection() {
                         </div>
                     </motion.div>
                 </div>
+
+                {/* Testimonials Section */}
+                <motion.div
+                    className="mt-16 lg:mt-24"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                    <p className="text-center text-zinc-500 text-xs sm:text-sm font-light tracking-[0.3em] uppercase mb-8">
+                        {language === 'es' ? 'Lo que dicen de nosotros' : 'What people say about us'}
+                    </p>
+
+                    {/* First row - scrolling left */}
+                    <div className="relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+                        <Marquee pauseOnHover className="[--duration:50s]">
+                            {firstRow.map((testimonial, idx) => (
+                                <TestimonialCard
+                                    key={idx}
+                                    name={testimonial.name}
+                                    username={testimonial.username}
+                                    quote={testimonial.quote}
+                                    gradientFrom={testimonial.gradientFrom}
+                                    gradientTo={testimonial.gradientTo}
+                                />
+                            ))}
+                        </Marquee>
+                    </div>
+
+                    {/* Second row - scrolling right */}
+                    <div className="relative" style={{ marginTop: '28px' }}>
+                        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+                        <Marquee pauseOnHover reverse className="[--duration:45s]">
+                            {secondRow.map((testimonial, idx) => (
+                                <TestimonialCard
+                                    key={idx}
+                                    name={testimonial.name}
+                                    username={testimonial.username}
+                                    quote={testimonial.quote}
+                                    gradientFrom={testimonial.gradientFrom}
+                                    gradientTo={testimonial.gradientTo}
+                                />
+                            ))}
+                        </Marquee>
+                    </div>
+                </motion.div>
             </motion.div>
         </section>
     );

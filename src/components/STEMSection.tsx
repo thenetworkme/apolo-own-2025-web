@@ -5,30 +5,30 @@ import { motion, useInView } from 'framer-motion';
 import { ThreeDMarquee } from '@/components/ui/shadcn-io/3d-marquee';
 import { useLanguage } from '@/context/LanguageContext';
 
-// STEM activity images - replace with actual STEM visit photos
+// STEM activity images
 const stemImages = [
-    '/images/rover-2019.png',
-    '/images/rover-2022.png',
-    '/images/rover-2024.png',
-    '/images/rover-2025.png',
-    '/images/rover-herc.png',
-    '/images/astronaut-transparent.png',
-    '/images/rover-2019.png',
-    '/images/rover-2022.png',
-    '/images/rover-2024.png',
-    '/images/rover-2025.png',
-    '/images/rover-herc.png',
-    '/images/astronaut-transparent.png',
-    '/images/rover-2019.png',
-    '/images/rover-2022.png',
-    '/images/rover-2024.png',
-    '/images/rover-2025.png',
-    '/images/rover-herc.png',
-    '/images/astronaut-transparent.png',
-    '/images/rover-2019.png',
-    '/images/rover-2022.png',
-    '/images/rover-2024.png',
-    '/images/rover-2025.png',
+    '/stem/WhatsApp Image 2026-01-04 at 7.10.20 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (2).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (3).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.12.41 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.10.20 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (2).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (3).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.12.41 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.10.20 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (2).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (3).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.12.41 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.10.20 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (2).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (3).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.12.41 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.10.20 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (2).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (3).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.12.41 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.10.20 PM (1).jpeg',
+    '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (2).jpeg',
 ];
 
 export default function STEMSection() {
