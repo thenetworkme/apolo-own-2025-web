@@ -22,29 +22,29 @@ export default function Home() {
       {/* Scroll Reveal Section - Immersive text animation */}
       <ScrollRevealSection />
 
-      {/* Sections with Meteors + Dot Pattern Background */}
+      {/* Sections with Meteors Background */}
       <div className="relative overflow-hidden">
-        {/* Dot Pattern Background - subtle grid effect */}
-
-
-        {/* Meteors - falling stars effect */}
-
-
         <div className="relative z-10">
           <div className="absolute inset-0 z-[1] overflow-hidden">
             <Meteors number={5} />
           </div>
-          <SaveTheDateSection />
-          <RoverAchievementsSection />
-          {/* <RoverRoadmapSection /> */}
-          <SponsorsSection />
 
+          {/* Achievements - Build credibility */}
+          <RoverAchievementsSection />
+
+          {/* Social Proof - Testimonials and Social Media */}
           <SocialMediaSection />
+
+          {/* STEM Impact - Educational CTA */}
+          <STEMSection />
+
+          {/* Save the Date - Urgency */}
+          <SaveTheDateSection />
+
+          {/* Sponsors - Who supports us */}
+          <SponsorsSection />
         </div>
       </div>
-
-      {/* STEM Section with 3D Marquee */}
-      <STEMSection />
 
       {/* Footer with Globe */}
       <Footer />
