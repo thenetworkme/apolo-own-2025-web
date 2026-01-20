@@ -933,6 +933,8 @@ body {
 @media (min-width: 1024px) {
   .social-bento-grid {
     grid-template-rows: repeat(2, 140px);
+    max-width: 600px;
+    padding: 0;
   }
 
   .social-bento-icon {
@@ -944,6 +946,62 @@ body {
   .social-card-instagram .social-bento-icon {
     width: 6rem;
     height: 6rem;
+  }
+}
+
+/* Extra Large Desktop (1280px+) */
+@media (min-width: 1280px) {
+  .social-bento-grid {
+    grid-template-rows: repeat(2, 150px);
+    max-width: 650px;
+    gap: 0.875rem;
+  }
+
+  .social-bento-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .social-card-instagram .social-bento-icon {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+
+/* Ultra Wide Desktop (1536px+) */
+@media (min-width: 1536px) {
+  .social-bento-grid {
+    grid-template-rows: repeat(2, 160px);
+    max-width: 700px;
+    gap: 1rem;
+  }
+
+  .social-bento-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .social-card-instagram .social-bento-icon {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+/* 4K and Ultra Wide (1920px+) */
+@media (min-width: 1920px) {
+  .social-bento-grid {
+    grid-template-rows: repeat(2, 170px);
+    max-width: 750px;
+  }
+
+  .social-bento-icon {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .social-card-instagram .social-bento-icon {
+    width: 7.5rem;
+    height: 7.5rem;
   }
 }
 
