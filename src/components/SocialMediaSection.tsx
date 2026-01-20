@@ -1,17 +1,18 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { OrbitingCircles } from '@/components/ui/orbiting-circles';
 import { useLanguage } from '@/context/LanguageContext';
 import Marquee from '@/components/ui/Marquee';
 import TestimonialCard from '@/components/TestimonialCard';
 import {
-    FaInstagram,
-    FaTiktok,
-    FaYoutube,
-    FaLinkedinIn
-} from 'react-icons/fa6';
+    IconBrandInstagram,
+    IconBrandTiktok,
+    IconBrandYoutube,
+    IconBrandLinkedin
+} from '@tabler/icons-react';
 
 // Animation variants
 const containerVariants = {
@@ -122,7 +123,8 @@ export default function SocialMediaSection() {
 
                     {/* Left side - Text content */}
                     <motion.div
-                        className="flex-1 text-center lg:text-left max-w-xl"
+                        className="flex-1 text-center lg:text-left max-w-xl lg:ml-auto"
+                        style={{ marginLeft: '25px' }}
                         variants={titleVariants}
                     >
                         <p className="text-zinc-500 text-xs sm:text-sm font-light tracking-[0.3em] uppercase mb-4">
@@ -136,78 +138,103 @@ export default function SocialMediaSection() {
                         </p>
                     </motion.div>
 
-                    {/* Right side - Orbiting Circles with slide-in animation */}
+                    {/* Right side - Bento Grid for Social Media */}
                     <motion.div
+                        className="flex-1 flex justify-center lg:justify-end w-full max-w-xl lg:max-w-2xl"
+                        variants={orbitVariants}
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
+                    >
+                        {/* Bento Grid using global CSS classes */}
+                        <div className="social-bento-grid font-[family-name:var(--font-poppins)]">
+
+                            {/* Instagram Card */}
+                            <motion.a
+                                href="https://instagram.com/apolo27rd"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-bento-card social-card-instagram"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                            >
+                                <div className="social-bento-icon">
+                                    <Image src="/social_media/instagram.png" alt="Instagram" fill className="object-contain" quality={100} unoptimized />
+                                </div>
+                            </motion.a>
+
+                            {/* LinkedIn Card */}
+                            <motion.a
+                                href="https://linkedin.com/company/apolo27"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-bento-card social-card-linkedin"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                            >
+                                <div className="social-bento-icon">
+                                    <Image src="/social_media/Linkedin.png" alt="LinkedIn" fill className="object-contain" quality={100} unoptimized />
+                                </div>
+                            </motion.a>
+
+                            {/* TikTok Card */}
+                            <motion.a
+                                href="https://tiktok.com/@apolo27rd"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-bento-card social-card-tiktok"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                            >
+                                <div className="social-bento-icon">
+                                    <Image src="/social_media/tiktok.png" alt="TikTok" fill className="object-contain" quality={100} unoptimized />
+                                </div>
+                            </motion.a>
+
+                            {/* YouTube Card */}
+                            <motion.a
+                                href="https://youtube.com/@apolo27"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-bento-card social-card-youtube"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                            >
+                                <div className="social-bento-icon">
+                                    <Image src="/social_media/youtube.png" alt="YouTube" fill className="object-contain" quality={100} unoptimized />
+                                </div>
+                            </motion.a>
+                        </div>
+                    </motion.div>
+
+                    {/* COMMENTED OUT: Original Orbiting Circles Animation */}
+                    {/* <motion.div
                         className="flex-1 flex justify-center lg:justify-end"
                         variants={orbitVariants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                     >
                         <div className="relative aspect-square h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center scale-[0.65] sm:scale-75 md:scale-90 lg:scale-100">
-
-                            {/* Outer orbit - LinkedIn and YouTube */}
-                            <OrbitingCircles
-                                iconSize={50}
-                                radius={180}
-                                duration={30}
-                                path={true}
-                            >
-                                <a
-                                    href="https://linkedin.com/company/apolo27"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center w-11 h-11 rounded-full bg-blue-600 hover:scale-110 transition-transform duration-300"
-                                >
+                            <OrbitingCircles iconSize={50} radius={180} duration={30} path={true}>
+                                <a href="https://linkedin.com/company/apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-full bg-blue-600 hover:scale-110 transition-transform duration-300">
                                     <FaLinkedinIn className="w-5 h-5 text-white" />
                                 </a>
-                                <a
-                                    href="https://youtube.com/@apolo27"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center w-11 h-11 rounded-full bg-red-600 hover:scale-110 transition-transform duration-300"
-                                >
+                                <a href="https://youtube.com/@apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-full bg-red-600 hover:scale-110 transition-transform duration-300">
                                     <FaYoutube className="w-5 h-5 text-white" />
                                 </a>
                             </OrbitingCircles>
-
-                            {/* Middle orbit - Instagram and TikTok */}
-                            <OrbitingCircles
-                                iconSize={40}
-                                radius={110}
-                                reverse
-                                speed={1.5}
-                                duration={25}
-                                path={true}
-                            >
-                                <a
-                                    href="https://instagram.com/apolo27"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 hover:scale-110 transition-transform duration-300"
-                                >
+                            <OrbitingCircles iconSize={40} radius={110} reverse speed={1.5} duration={25} path={true}>
+                                <a href="https://instagram.com/apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 hover:scale-110 transition-transform duration-300">
                                     <FaInstagram className="w-5 h-5 text-white" />
                                 </a>
-                                <a
-                                    href="https://tiktok.com/@apolo27"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:scale-110 transition-transform duration-300"
-                                >
+                                <a href="https://tiktok.com/@apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:scale-110 transition-transform duration-300">
                                     <FaTiktok className="w-5 h-5 text-white" />
                                 </a>
                             </OrbitingCircles>
-
-                            {/* Inner orbit - Empty decorative */}
-                            <OrbitingCircles
-                                iconSize={20}
-                                radius={40}
-                                duration={20}
-                                path={true}
-                            >
+                            <OrbitingCircles iconSize={20} radius={40} duration={20} path={true}>
                                 <div />
                             </OrbitingCircles>
                         </div>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
 
                 {/* Testimonials Section */}
@@ -217,12 +244,9 @@ export default function SocialMediaSection() {
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                    <p className="text-center text-zinc-500 text-xs sm:text-sm font-light tracking-[0.3em] uppercase mb-8">
-                        {language === 'es' ? 'Lo que dicen de nosotros' : 'What people say about us'}
-                    </p>
 
                     {/* First row - scrolling left */}
-                    <div className="relative">
+                    {/* <div className="relative">
                         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
                         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
                         <Marquee pauseOnHover className="[--duration:50s]">
@@ -237,10 +261,10 @@ export default function SocialMediaSection() {
                                 />
                             ))}
                         </Marquee>
-                    </div>
+                    </div> */}
 
                     {/* Second row - scrolling right */}
-                    <div className="relative" style={{ marginTop: '28px' }}>
+                    {/* <div className="relative" style={{ marginTop: '28px' }}>
                         <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
                         <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
                         <Marquee pauseOnHover reverse className="[--duration:45s]">
@@ -255,7 +279,7 @@ export default function SocialMediaSection() {
                                 />
                             ))}
                         </Marquee>
-                    </div>
+                    </div> */}
                 </motion.div>
             </motion.div>
         </section>

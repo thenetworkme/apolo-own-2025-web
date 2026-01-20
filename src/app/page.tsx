@@ -25,9 +25,9 @@ export default function Home() {
       {/* Sections with Meteors Background */}
       <div className="relative overflow-hidden">
         <div className="relative z-10">
-          <div className="absolute inset-0 z-[1] overflow-hidden">
+          {/* <div className="absolute inset-0 z-[1] overflow-hidden">
             <Meteors number={5} />
-          </div>
+          </div> */}
 
           {/* Achievements - Build credibility */}
           <RoverAchievementsSection />
