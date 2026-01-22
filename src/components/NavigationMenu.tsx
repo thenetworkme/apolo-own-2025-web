@@ -3,13 +3,23 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
+import { useRouter, usePathname } from 'next/navigation';
 
-const navItems = [
-    { id: 'hero', labelEs: 'INICIO', labelEn: 'HOME' },
-    { id: 'save-the-date', labelEs: 'EVENTO', labelEn: 'EVENT' },
-    { id: 'achievements', labelEs: 'LOGROS', labelEn: 'ACHIEVEMENTS' },
-    { id: 'sponsors', labelEs: 'ALIADOS', labelEn: 'SPONSORS' },
-    { id: 'social', labelEs: 'REDES', labelEn: 'SOCIAL' },
+type NavItem = {
+    id: string;
+    labelEs: string;
+    labelEn: string;
+    type: 'scroll' | 'route';
+    path?: string;
+};
+
+const navItems: NavItem[] = [
+    { id: 'hero', labelEs: 'INICIO', labelEn: 'HOME', type: 'scroll' },
+    { id: 'save-the-date', labelEs: 'EVENTO', labelEn: 'EVENT', type: 'scroll' },
+    { id: 'achievements', labelEs: 'LOGROS', labelEn: 'ACHIEVEMENTS', type: 'scroll' },
+    { id: 'sponsors', labelEs: 'ALIADOS', labelEn: 'SPONSORS', type: 'scroll' },
+    { id: 'hall-of-fame', labelEs: 'SALÓN DE LA FAMA', labelEn: 'HALL OF FAME', type: 'route', path: '/hall-of-fame' },
+    { id: 'social', labelEs: 'REDES', labelEn: 'SOCIAL', type: 'scroll' },
 ];
 
 const socialLinks = [
@@ -21,6 +31,8 @@ const socialLinks = [
 
 export default function NavigationMenu() {
     const { language } = useLanguage();
+    const router = useRouter();
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('hero');
 
@@ -40,13 +52,26 @@ export default function NavigationMenu() {
         };
     }, [isOpen]);
 
-    const handleNavClick = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        setActiveItem(id);
+    const handleNavClick = (item: NavItem) => {
         setIsOpen(false);
+
+        if (item.type === 'route' && item.path) {
+            router.push(item.path);
+            setActiveItem(item.id);
+            return;
+        }
+
+        // Scroll logic
+        if (pathname !== '/') {
+            router.push(`/#${item.id}`);
+            // Note: Active item state might reset on navigation, which is expected behavior
+        } else {
+            const element = document.getElementById(item.id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            setActiveItem(item.id);
+        }
     };
 
     // Get label based on current language
@@ -133,7 +158,7 @@ export default function NavigationMenu() {
                                         transition={{ delay: 0.1 + index * 0.08 }}
                                     >
                                         <button
-                                            onClick={() => handleNavClick(item.id)}
+                                            onClick={() => handleNavClick(item)}
                                             className="group relative text-left w-full py-3 sm:py-4"
                                         >
                                             <div className="flex items-center gap-2 sm:gap-3">

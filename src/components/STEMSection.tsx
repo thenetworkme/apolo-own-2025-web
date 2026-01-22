@@ -59,7 +59,7 @@ export default function STEMSection() {
         <section
             id="stem"
             ref={sectionRef}
-            className="relative w-full h-screen flex items-center justify-center overflow-hidden"
+            className="relative w-full h-[70vh] min-h-[500px] stem-section-spacing flex items-center justify-center overflow-hidden"
         >
             {/* Content Overlay */}
             <motion.div
@@ -77,15 +77,16 @@ export default function STEMSection() {
                         {t.titleHighlight}
                     </span>
                 </h2>
-                <p className="text-zinc-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-                    {t.description}
-                </p>
-                <a
-                    href="#stem-visit"
-                    className="inline-flex items-center gap-2 px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-300"
-                >
-                    {t.ctaButton}
-                </a>
+
+                <div className="mt-8 w-full flex justify-center">
+                    <a
+                        href="#stem-visit"
+                        className="inline-flex items-center gap-3 px-12 py-6 bg-red-600 hover:bg-red-700 text-white text-xl font-bold rounded-2xl transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:shadow-[0_0_30px_rgba(220,38,38,0.8)] hover:scale-105"
+                        style={{ padding: '100px !', }}
+                    >
+                        {t.ctaButton}
+                    </a>
+                </div>
             </motion.div>
 
             {/* Dark Overlay */}
@@ -96,6 +97,6 @@ export default function STEMSection() {
                 className="pointer-events-none absolute inset-0 h-full w-full"
                 images={stemImages}
             />
-        </section>
+        </section >
     );
 }

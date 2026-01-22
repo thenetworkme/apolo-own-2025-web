@@ -113,34 +113,33 @@ export default function SocialMediaSection() {
             className="section-spacing relative w-full bg-black overflow-hidden"
         >
             <motion.div
-                className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+                className="social-section-wrapper"
                 variants={containerVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
             >
-                {/* Two column layout - Text left, Orbits right */}
-                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+                {/* Two column layout - Text left, Grid right */}
+                <div className="social-layout">
 
                     {/* Left side - Text content */}
                     <motion.div
-                        className="flex-1 text-center lg:text-left max-w-xl lg:ml-auto"
-                        style={{ marginLeft: '25px' }}
+                        className="social-text-content"
                         variants={titleVariants}
                     >
                         <p className="text-zinc-500 text-xs sm:text-sm font-light tracking-[0.3em] uppercase mb-4">
                             {t('social.subtitle')}
                         </p>
-                        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide mb-6">
+                        <h2 className="social-title text-white font-light tracking-wide mb-6">
                             {t('social.title')}
                         </h2>
-                        <p className="text-zinc-400 text-base sm:text-lg">
+                        <p className="social-description text-zinc-400">
                             {t('social.description')}
                         </p>
                     </motion.div>
 
                     {/* Right side - Bento Grid for Social Media */}
                     <motion.div
-                        className="flex-1 flex justify-center lg:justify-end w-full max-w-xl lg:max-w-2xl"
+                        className="social-grid-wrapper"
                         variants={orbitVariants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
