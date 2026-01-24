@@ -70,7 +70,7 @@ export default function STEMSectionNew() {
                 <div className="w-full flex justify-center items-center pb-12 relative z-20 force-stem-spacing px-4">
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400 w-full max-w-[600px] py-4 text-xl "
+                        className="group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400 py-3 px-8 text-base rounded-sm w-full sm:w-auto min-w-[200px]"
                     >
                         <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
                         <span className="relative z-10">{t.ctaButton}</span>
