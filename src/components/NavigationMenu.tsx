@@ -18,7 +18,7 @@ const navItems: NavItem[] = [
     { id: 'save-the-date', labelEs: 'EVENTO', labelEn: 'EVENT', type: 'scroll' },
     { id: 'achievements', labelEs: 'LOGROS', labelEn: 'ACHIEVEMENTS', type: 'scroll' },
     { id: 'sponsors', labelEs: 'ALIADOS', labelEn: 'SPONSORS', type: 'scroll' },
-    { id: 'hall-of-fame', labelEs: 'SALÓN DE LA FAMA', labelEn: 'HALL OF FAME', type: 'route', path: '/hall-of-fame' },
+    { id: 'hall-of-fame', labelEs: 'SALÓN DE LA FAMA', labelEn: 'HALL OF FAME', type: 'scroll' },
     { id: 'social', labelEs: 'REDES', labelEn: 'SOCIAL', type: 'scroll' },
 ];
 
