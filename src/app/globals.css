@@ -1627,6 +1627,35 @@ body {
   gap: 16px;
 }
 
+/* Force STEM Section height reduction */
+.stem-container-height {
+  height: 500px !important;
+  /* Increased back slightly */
+}
+
+@media (max-width: 768px) {
+  .stem-container-height {
+    height: 400px !important;
+    /* Increased back slightly */
+  }
+}
+
+/* Force Sponsors to pull up drastically */
+#sponsors {
+  margin-top: -30px !important;
+  /* Relaxed from -60px */
+  padding-top: 2rem !important;
+  position: relative;
+  z-index: 15;
+}
+
+@media (min-width: 768px) {
+  #sponsors {
+    margin-top: -50px !important;
+    /* Relaxed from -100px */
+  }
+}
+
 @media (min-width: 640px) {
   .hall-of-fame-content {
     gap: 32px;

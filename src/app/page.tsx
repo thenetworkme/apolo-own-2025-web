@@ -22,23 +22,27 @@ export default function Home() {
       {/* Scroll Reveal Section - Immersive text animation */}
       <ScrollRevealSection />
 
+      {/* Save the Date - Urgency */}
+      <SaveTheDateSection />
+
       {/* Sections with Meteors Background */}
       <div className="relative overflow-hidden">
         <div className="relative z-10">
           {/* Hall of Fame - Engineering showcase */}
           <HallOfFameSection />
 
-          {/* Social Proof - Testimonials and Social Media */}
-          <SocialMediaSection />
+
 
           {/* STEM Impact - Educational CTA with CircularGallery */}
           <STEMSectionNew />
 
-          {/* Save the Date - Urgency */}
-          <SaveTheDateSection />
+
 
           {/* Sponsors - Who supports us */}
           <SponsorsSection />
+
+          {/* Social Proof - Testimonials and Social Media */}
+          <SocialMediaSection />
         </div>
       </div>
 
