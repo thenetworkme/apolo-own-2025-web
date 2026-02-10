@@ -1,3 +1,6 @@
+'use client';
+
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
 import ScrollRevealSection from "@/components/ScrollRevealSection";
 import Header from "@/components/Header";
@@ -7,11 +10,14 @@ import HallOfFameSection from "@/components/HallOfFameSection";
 import RoverRoadmapSection from "@/components/RoverRoadmapSection";
 import SponsorsSection from "@/components/SponsorsSection";
 import SocialMediaSection from "@/components/SocialMediaSection";
-import STEMSectionNew from "@/components/STEMSectionNew";
-import Footer from "@/components/Footer";
 import { Meteors } from "@/components/ui/meteors";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+
+import Footer from "@/components/Footer";
+
+// Lazy load heavy WebGL components to avoid SSR issues and reduce initial bundle
+const STEMSectionNew = dynamic(() => import("@/components/STEMSectionNew"), { ssr: false });
 
 export default function Home() {
   return (

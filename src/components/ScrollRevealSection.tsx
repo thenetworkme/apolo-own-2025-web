@@ -7,16 +7,16 @@ import { useLanguage } from '@/context/LanguageContext';
 
 // Team photos with random positions and rotations (max 4)
 const teamPhotos = [
-    { src: '/stem/WhatsApp Image 2026-01-04 at 7.10.20 PM (1).jpeg', top: '12%', left: '5%', rotate: -15 },
-    { src: '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (2).jpeg', top: '15%', right: '6%', rotate: 12 },
-    { src: '/stem/WhatsApp Image 2026-01-04 at 7.11.03 PM (3).jpeg', bottom: '18%', left: '8%', rotate: 20 },
-    { src: '/stem/WhatsApp Image 2026-01-04 at 7.12.41 PM (1).jpeg', bottom: '15%', right: '5%', rotate: -18 },
+    { src: '/stem/stem-1.webp', top: '12%', left: '5%', rotate: -15 },
+    { src: '/stem/stem-2.webp', top: '15%', right: '6%', rotate: 12 },
+    { src: '/stem/stem-3.webp', bottom: '18%', left: '8%', rotate: 20 },
+    { src: '/stem/stem-4.webp', bottom: '15%', right: '5%', rotate: -18 },
 ];
 
 // Translations
 const content = {
-    es: "UN PEQUEÑO GRUPO DE ESTUDIANTES DOMINICANOS CON UN GRAN SUEÑO: LLEVAR A REPÚBLICA DOMINICANA AL ESPACIO.",
-    en: "A SMALL GROUP OF DOMINICAN STUDENTS WITH A BIG DREAM: TAKING THE DOMINICAN REPUBLIC TO SPACE."
+    es: "UN GRUPO DE ESTUDIANTES DOMINICANOS CON UN GRAN SUEÑO: LLEVAR A REPÚBLICA DOMINICANA AL ESPACIO.",
+    en: "A GROUP OF DOMINICAN STUDENTS WITH A BIG DREAM: TAKING THE DOMINICAN REPUBLIC TO SPACE."
 };
 
 export default function ScrollRevealSection() {

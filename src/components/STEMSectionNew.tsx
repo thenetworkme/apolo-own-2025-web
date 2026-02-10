@@ -7,10 +7,10 @@ import STEMVisitModal from '@/components/STEMVisitModal';
 
 // STEM activity images for the CircularGallery
 const stemImages = [
-    { image: '/stem/WhatsApp%20Image%202026-01-04%20at%207.10.20%20PM%20(1).jpeg', text: '' },
-    { image: '/stem/WhatsApp%20Image%202026-01-04%20at%207.11.03%20PM%20(2).jpeg', text: '' },
-    { image: '/stem/WhatsApp%20Image%202026-01-04%20at%207.11.03%20PM%20(3).jpeg', text: '' },
-    { image: '/stem/WhatsApp%20Image%202026-01-04%20at%207.12.41%20PM%20(1).jpeg', text: '' }
+    { image: '/stem/stem-1.webp', text: '' },
+    { image: '/stem/stem-2.webp', text: '' },
+    { image: '/stem/stem-3.webp', text: '' },
+    { image: '/stem/stem-4.webp', text: '' }
 ];
 
 export default function STEMSectionNew() {
