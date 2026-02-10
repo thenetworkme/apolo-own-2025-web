@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -40,8 +41,10 @@ export default function HallOfFameSection() {
 
     const t = content[language];
 
+    const router = useRouter();
+
     const handleEnterClick = () => {
-        console.log('Enter Hall of Fame clicked');
+        router.push('/hall-of-fame');
     };
 
     return (
