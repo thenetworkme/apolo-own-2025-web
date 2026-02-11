@@ -64,63 +64,42 @@ export default function HallOfFamePage() {
             current_gen: "Gen Actual",
             spec_id: "ID-ESPEC",
             fig_label: "ELEVACIÓN LATERAL",
-            label_lead: "Líder de Proyecto",
-            label_weight: "Peso Total",
-            label_material: "Material del Chasis",
+
+
             label_drive: "Transmisión",
             label_wheels: "Tipo de Rueda",
             label_awards: "Premios y Honores NASA",
-            view_blueprints: "Ver Planos Completos",
+
             footer_init: "INICIALIZACIÓN DE ARCHIVO",
             rovers: [
                 {
                     id: 'mk-v',
-                    name: 'ROVER MK. V',
-                    year: '2024',
+                    name: 'ROVER  RC',
+                    year: '2025',
                     specs: {
-                        lead: 'J. Ramirez, Dept. Ing. Mec.',
-                        material: 'Aluminio 6061-T6',
-                        weight: '145 lbs (Clase Ligera)',
+
                     },
                     awards: [
-                        { title: 'Premio Peso Ligero', type: 'featherweight' },
-                        { title: 'Innovación en Diseño', type: 'design' },
+                        { title: '1', type: 'featherweight' },
+                        { title: '2', type: 'design' },
                     ],
                     image: '/rovers/rover_rc_blueprint.png',
                     description: 'Especificaciones completas de diseño y registros de rendimiento de misión.',
                 },
                 {
                     id: 'mk-iv',
-                    name: 'ROVER MK. IV',
-                    year: '2023',
+                    name: 'ROVER HP',
+                    year: '2025',
                     specs: {
-                        lead: 'Dr. A. Chen, Asesor Facultativo',
-                        material: 'Híbrido Fibra de Carbono',
-                        weight: '155 lbs',
-                        drive: 'Transmisión Variable'
+
                     },
                     awards: [
-                        { title: 'Top 10 Global', type: 'performance' },
+                        { title: '1', type: 'performance' },
                     ],
                     image: '/rovers/rover_hp_blueprint.png',
                     description: 'Fase de prototipado avanzado de chasis compuesto.',
                 },
-                {
-                    id: 'mk-iii',
-                    name: 'ROVER MK. III',
-                    year: '2022',
-                    specs: {
-                        lead: 'S. Williams, Diseño Senior',
-                        material: 'Acero Chromoly 4130',
-                        weight: '168 lbs',
-                        wheels: 'No Neumática, 20"'
-                    },
-                    awards: [
-                        { title: 'Equipo Más Mejorado', type: 'legacy' },
-                    ],
-                    image: '/rovers/rover_hp_blueprint.png',
-                    description: 'Integración fundamental de sistemas de telemetría.',
-                }
+
             ] as RoverSpec[]
         },
         en: {
@@ -136,63 +115,39 @@ export default function HallOfFamePage() {
             current_gen: "Current Gen",
             spec_id: "SPEC-ID",
             fig_label: "SIDE ELEVATION",
-            label_lead: "Project Lead",
-            label_weight: "Total Weight",
-            label_material: "Chassis Material",
-            label_drive: "Drivetrain",
-            label_wheels: "Wheel Type",
+
             label_awards: "NASA Awards & Honors",
-            view_blueprints: "View Full Blueprints",
+
             footer_init: "ARCHIVE INITIALIZATION",
             rovers: [
                 {
                     id: 'mk-v',
-                    name: 'ROVER MK. V',
-                    year: '2024',
+                    name: 'ROVER RC',
+                    year: '2025',
                     specs: {
-                        lead: 'J. Ramirez, Dept. of Mech Eng.',
-                        material: 'Aluminum 6061-T6',
-                        weight: '145 lbs (Lightweight Class)',
+
                     },
                     awards: [
-                        { title: 'Featherweight Award', type: 'featherweight' },
-                        { title: 'Design Innovation', type: 'design' },
+                        { title: '1', type: 'featherweight' },
+                        { title: '2', type: 'design' },
                     ],
                     image: '/rovers/rover_rc_blueprint.png',
                     description: 'Comprehensive design specifications and mission performance records.',
                 },
                 {
                     id: 'mk-iv',
-                    name: 'ROVER MK. IV',
-                    year: '2023',
+                    name: 'ROVER HP',
+                    year: '2025',
                     specs: {
-                        lead: 'Dr. A. Chen, Faculty Advisor',
-                        material: 'Carbon Fiber Hybrid',
-                        weight: '155 lbs',
-                        drive: 'Variable Belt Drive'
+
                     },
                     awards: [
-                        { title: 'Global Top 10 Finish', type: 'performance' },
+                        { title: '1', type: 'performance' },
                     ],
                     image: '/rovers/rover_hp_blueprint.png',
                     description: 'Advanced composite chassis prototyping phase.',
                 },
-                {
-                    id: 'mk-iii',
-                    name: 'ROVER MK. III',
-                    year: '2022',
-                    specs: {
-                        lead: 'S. Williams, Senior Design',
-                        material: 'Chromoly Steel 4130',
-                        weight: '168 lbs',
-                        wheels: 'Non-Pneumatic, 20"'
-                    },
-                    awards: [
-                        { title: 'Most Improved Team', type: 'legacy' },
-                    ],
-                    image: '/rovers/rover_hp_blueprint.png',
-                    description: ' foundational telemetry systems integration.',
-                }
+
             ] as RoverSpec[]
         }
     };
@@ -213,16 +168,16 @@ export default function HallOfFamePage() {
             <Header />
 
             {/* Header Spacer - Constant Height */}
-            <div className="h-32 md:h-40 w-full shrink-0" aria-hidden="true" />
+            <div className="h-36 md:h-44 lg:h-48 w-full shrink-0" aria-hidden="true" />
 
             {/* Main Content Wrapper - Full Width but Centered Children */}
-            <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 pb-12 flex-grow flex flex-col items-center">
+            <div className="relative z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-20 flex-grow flex flex-col items-center" style={{ paddingLeft: 20, paddingRight: 20 }}>
 
                 {/* Top Nav Bar (Cosmetic) - Constrained Width */}
                 <div className="w-full max-w-[1200px] flex flex-col">
-                    <div className="flex flex-wrap items-center justify-between border-b border-zinc-800 pb-4 mb-8 gap-4">
+                    <div className="flex flex-wrap items-center justify-between border-b border-zinc-800 pb-5 mb-10 md:mb-12 gap-4">
                         <div className="flex items-center gap-4">
-                            <div className="bg-red-600 px-2 py-1 text-black font-bold text-xs uppercase">{t.header_title}</div>
+                            <div className="bg-red-600 px-2 py-1 text-black font-bold text-[9px] sm:text-xs uppercase">{t.header_title}</div>
                             <span className="text-red-500 text-xs">V.4.0-R</span>
                         </div>
                         <div className="flex gap-6 text-[10px] sm:text-xs tracking-widest text-zinc-500">
@@ -232,7 +187,7 @@ export default function HallOfFamePage() {
                         </div>
                         <div className="flex items-center gap-2">
 
-                            <button className="bg-red-600 hover:bg-red-700 text-white text-xs px-4 py-1.5 transition-colors font-bold tracking-wider uppercase">
+                            <button className="bg-red-600 hover:bg-red-700 text-white text-[10px] sm:text-xs px-3 sm:px-4 py-1.5 transition-colors font-bold tracking-wider uppercase">
                                 {t.access}
                             </button>
                         </div>
@@ -243,28 +198,28 @@ export default function HallOfFamePage() {
 
                     {/* Main Content - Rover Database (Centered Width) */}
                     <div className="w-full max-w-4xl">
-                        <div className="mb-8 border-l-4 border-red-600 pl-4 py-2">
+                        <div className="mb-10 md:mb-14 border-l-4 border-red-600 pl-5 md:pl-6 py-3 md:py-4">
                             <div className="flex items-center gap-2 mb-1">
                                 <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
                                 <span className="text-[10px] bg-red-900/30 text-red-400 px-1 py-0.5 uppercase tracking-widest">{t.authorized}</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-2 uppercase">
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-3 md:mb-4 uppercase">
                                 {t.page_title}
                             </h1>
-                            <p className="text-zinc-400 font-sans max-w-2xl">
+                            <p className="text-zinc-400 font-sans max-w-2xl leading-relaxed mt-1">
                                 {t.page_subtitle}
                             </p>
                         </div>
 
                         {/* Timeline / Selector */}
-                        <div className="relative border-l border-zinc-800 pl-8 ml-3 space-y-12">
+                        <div className="relative border-l border-zinc-800 pl-5 sm:pl-8 ml-2 sm:ml-3 space-y-14 md:space-y-16">
 
                             {t.rovers.map((rover, index) => (
                                 <div key={rover.id} className="relative group">
                                     {/* Timeline Node */}
                                     <div
                                         className={cn(
-                                            "absolute -left-[39px] top-6 w-5 h-5 rounded-full border-4 border-[#050505] transition-colors duration-300",
+                                            "absolute -left-[30px] sm:-left-[39px] top-6 w-4 h-4 sm:w-5 sm:h-5 rounded-full border-4 border-[#050505] transition-colors duration-300",
                                             activeRover === rover.id ? "bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.5)]" : "bg-zinc-800 group-hover:bg-zinc-700"
                                         )}
                                         onClick={() => setActiveRover(rover.id)}
@@ -273,16 +228,16 @@ export default function HallOfFamePage() {
                                     {/* Card Header (Visible always) */}
                                     <div
                                         onClick={() => setActiveRover(rover.id)}
-                                        className="cursor-pointer mb-2 flex items-center justify-between"
+                                        className="cursor-pointer mb-3 md:mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4"
                                     >
                                         <div className="flex items-center gap-4">
                                             {index === 0 && <span className="bg-red-600 text-white text-[10px] px-1.5 py-0.5 font-bold uppercase">{t.current_gen}</span>}
-                                            <h3 className={cn("text-xl font-bold uppercase tracking-wide transition-colors", activeRover === rover.id ? "text-white" : "text-zinc-500")}>
+                                            <h3 className={cn("text-base sm:text-xl font-bold uppercase tracking-wide transition-colors", activeRover === rover.id ? "text-white" : "text-zinc-500")}>
                                                 {rover.name} <span className="text-zinc-600">({rover.year})</span>
                                             </h3>
                                         </div>
                                         <div className="text-[10px] text-zinc-600 font-mono tracking-widest">
-                                            {t.spec_id}: HERC-2{4 - index}-A
+                                            {t.spec_id}: HERC-25-A
                                         </div>
                                     </div>
 
@@ -299,7 +254,7 @@ export default function HallOfFamePage() {
                                                 <SciFiCard className="grid grid-cols-1 md:grid-cols-5 bg-zinc-900/40 p-0 overflow-hidden">
 
                                                     {/* Image Section */}
-                                                    <div className="md:col-span-2 relative h-64 md:h-auto bg-red-900/5 min-h-[300px] border-r border-zinc-800">
+                                                    <div className="md:col-span-2 relative h-48 sm:h-56 md:h-auto bg-red-900/5 min-h-0 md:min-h-[300px] border-b md:border-b-0 md:border-r border-zinc-800">
                                                         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" /> {/* Reuse global grid if available, simplistic fallback */}
                                                         <div className="relative w-full h-full flex items-center justify-center p-8">
                                                             <div className="relative w-full h-full">
@@ -317,35 +272,10 @@ export default function HallOfFamePage() {
                                                     </div>
 
                                                     {/* Specs Section */}
-                                                    <div className="md:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                                                        <div className="grid grid-cols-2 gap-8 mb-8">
-                                                            <div>
-                                                                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t.label_lead}</div>
-                                                                <div className="text-sm text-zinc-200 font-mono">{rover.specs.lead}</div>
-                                                            </div>
-                                                            <div>
-                                                                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t.label_weight}</div>
-                                                                <div className="text-sm text-white font-bold">{rover.specs.weight}</div>
-                                                            </div>
-                                                            <div>
-                                                                <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t.label_material}</div>
-                                                                <div className="text-sm text-zinc-300">{rover.specs.material}</div>
-                                                            </div>
-                                                            {rover.specs.drive && (
-                                                                <div>
-                                                                    <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t.label_drive}</div>
-                                                                    <div className="text-sm text-zinc-300">{rover.specs.drive}</div>
-                                                                </div>
-                                                            )}
-                                                            {rover.specs.wheels && (
-                                                                <div>
-                                                                    <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">{t.label_wheels}</div>
-                                                                    <div className="text-sm text-zinc-300">{rover.specs.wheels}</div>
-                                                                </div>
-                                                            )}
-                                                        </div>
+                                                    <div className="md:col-span-3 p-6 md:p-10 flex flex-col justify-center">
 
-                                                        <div className="mt-auto border-t border-zinc-800 pt-6">
+
+                                                        <div className="mt-auto border-t border-zinc-800 pt-6 md:pt-8">
                                                             <div className="flex items-center gap-2 mb-3">
                                                                 <span className="text-red-500 text-xs">🏆</span>
                                                                 <span className="text-[10px] text-red-500 font-bold uppercase tracking-wider">{t.label_awards}</span>
@@ -364,11 +294,7 @@ export default function HallOfFamePage() {
                                                             </div>
                                                         </div>
 
-                                                        <div className="mt-8 flex justify-end">
-                                                            <button className="text-[10px] text-red-500 hover:text-red-400 font-bold tracking-widest flex items-center gap-1 uppercase transition-colors">
-                                                                {t.view_blueprints} <span>→</span>
-                                                            </button>
-                                                        </div>
+
                                                     </div>
 
                                                 </SciFiCard>
@@ -383,7 +309,7 @@ export default function HallOfFamePage() {
                 </div>
 
                 {/* Footer Note */}
-                <div className="text-center mt-24 pb-8 border-t border-zinc-900 pt-8 opacity-30 text-[10px] font-mono">
+                <div className="text-center mt-28 md:mt-32 pb-10 md:pb-12 border-t border-zinc-900 pt-10 md:pt-12 opacity-30 text-[10px] font-mono">
                     {t.footer_init} // 2026 • SYSTEM V.4.0-R
                 </div>
 

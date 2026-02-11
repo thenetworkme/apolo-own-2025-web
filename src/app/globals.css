@@ -433,7 +433,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 8rem 1.5rem 1rem;
+  padding: 4.5rem 1.5rem 1rem;
   max-width: 100%;
   text-align: center;
   align-items: center;
@@ -498,7 +498,7 @@ body {
   }
 
   .footer-content {
-    padding: 10rem 2rem 1rem;
+    padding: 5.5rem 2rem 1rem;
   }
 
   .footer-title {
@@ -1340,6 +1340,7 @@ body {
 
 /* ========================================
    STEM VISIT MODAL STYLES
+   Sci-fi / Hall-of-Fame themed
    ======================================== */
 
 .stem-modal-backdrop {
@@ -1350,48 +1351,111 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.80);
+  backdrop-filter: blur(4px);
 }
 
 .stem-modal {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   max-height: 90vh;
   overflow-y: auto;
-  background: #1a1f2e;
-  border-radius: 16px;
+  background: #0a0a0a;
+  border: 1px solid #27272a;
+  border-radius: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Decorative corner accents (matching SciFiCard) */
+.stem-modal::before,
+.stem-modal::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stem-modal::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid rgba(239, 68, 68, 0.5);
+  border-left: 2px solid rgba(239, 68, 68, 0.5);
+}
+
+.stem-modal::after {
+  top: 0;
+  right: 0;
+  border-top: 2px solid rgba(239, 68, 68, 0.5);
+  border-right: 2px solid rgba(239, 68, 68, 0.5);
+}
+
+/* Subtle grid background overlay */
+.stem-modal-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(#fff 1px, transparent 1px),
+    linear-gradient(90deg, #fff 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .stem-modal-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 24px 16px 24px;
+  padding: 28px 28px 20px 28px;
+  border-bottom: 1px solid #27272a;
 }
 
 .stem-modal-title {
-  font-size: 20px;
-  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 700;
   color: #ffffff;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Red accent bar before title */
+.stem-modal-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background: #dc2626;
+  margin-right: 12px;
+  vertical-align: middle;
 }
 
 .stem-modal-close {
+  position: relative;
+  z-index: 1;
   background: none;
-  border: none;
-  color: #6b7280;
+  border: 1px solid #27272a;
+  color: #71717a;
   cursor: pointer;
-  padding: 4px;
-  transition: color 0.2s;
+  padding: 6px;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .stem-modal-close:hover {
-  color: #ffffff;
+  color: #ef4444;
+  border-color: #ef4444;
 }
 
 .stem-modal-form {
-  padding: 0 24px 24px 24px;
+  padding: 24px 28px 28px 28px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1400,73 +1464,97 @@ body {
 .stem-modal-field {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .stem-modal-label {
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 500;
-  color: #9ca3af;
-  letter-spacing: 0.01em;
+  color: #71717a;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 .stem-modal-input {
   width: 100%;
-  height: 48px;
-  padding: 0 20px;
-  font-size: 15px;
-  background: #252b3b;
-  border: 1px solid #3a4255;
-  border-radius: 12px;
-  color: #ffffff;
+  height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid #27272a;
+  border-radius: 0;
+  color: #e4e4e7;
   outline: none;
-  transition: border-color 0.2s, background-color 0.2s;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
 .stem-modal-input::placeholder {
-  color: #6b7280;
+  color: #3f3f46;
+  font-size: 13px;
 }
 
 .stem-modal-input:focus {
-  border-color: #3b82f6;
-  background: #2a3142;
+  border-color: #dc2626;
+  background: rgba(24, 24, 27, 0.8);
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.15);
 }
 
 .stem-modal-input-with-icon {
-  padding-right: 48px;
+  padding-right: 44px;
 }
 
 .stem-modal-input-icon {
   position: absolute;
-  right: 16px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: #6b7280;
+  color: #52525b;
   pointer-events: none;
+}
+
+.stem-modal-select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.stem-modal-select option {
+  background: #0a0a0a;
+  color: #e4e4e7;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  padding: 8px;
 }
 
 .stem-modal-textarea {
   width: 100%;
   min-height: 100px;
-  padding: 16px 20px;
-  font-size: 15px;
-  background: #252b3b;
-  border: 1px solid #3a4255;
-  border-radius: 16px;
-  color: #ffffff;
+  padding: 14px 16px;
+  font-size: 14px;
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid #27272a;
+  border-radius: 0;
+  color: #e4e4e7;
   outline: none;
   resize: none;
-  font-family: inherit;
-  transition: border-color 0.2s, background-color 0.2s;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
 .stem-modal-textarea::placeholder {
-  color: #6b7280;
+  color: #3f3f46;
+  font-size: 13px;
 }
 
 .stem-modal-textarea:focus {
-  border-color: #3b82f6;
-  background: #2a3142;
+  border-color: #dc2626;
+  background: rgba(24, 24, 27, 0.8);
+  box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.15);
 }
 
 .stem-modal-row {
@@ -1482,78 +1570,95 @@ body {
   gap: 12px;
   padding-top: 20px;
   margin-top: 8px;
-  border-top: 1px solid #3a4255;
+  border-top: 1px solid #27272a;
 }
 
 .stem-modal-btn {
-  padding: 12px 24px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 10px;
-  border: none;
+  padding: 10px 24px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color 0.2s, opacity 0.2s;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  transition: background-color 0.2s, opacity 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .stem-modal-btn-cancel {
-  background: #3a4255;
-  color: #ffffff;
+  background: transparent;
+  border-color: #27272a;
+  color: #a1a1aa;
 }
 
 .stem-modal-btn-cancel:hover {
-  background: #4a5568;
+  border-color: #3f3f46;
+  color: #ffffff;
+  background: rgba(39, 39, 42, 0.3);
 }
 
 .stem-modal-btn-submit {
   background: #dc2626;
+  border-color: #dc2626;
   color: #ffffff;
 }
 
 .stem-modal-btn-submit:hover {
   background: #ef4444;
+  border-color: #ef4444;
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.3);
 }
 
 .stem-modal-btn-submit:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .stem-modal-success {
-  padding: 48px 24px;
+  padding: 48px 28px;
   text-align: center;
 }
 
 .stem-modal-success-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 24px auto;
-  background: rgba(34, 197, 94, 0.15);
-  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px auto;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .stem-modal-success-title {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: #ffffff;
   margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 .stem-modal-success-message {
-  font-size: 15px;
-  color: #9ca3af;
+  font-size: 13px;
+  color: #71717a;
   margin: 0 0 32px 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 .stem-modal-error {
   padding: 12px;
-  background: rgba(220, 38, 38, 0.1);
-  border-radius: 8px;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 0;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   color: #ef4444;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 /* Date/Time input color scheme fix */
@@ -1562,26 +1667,49 @@ body {
   color-scheme: dark;
 }
 
+/* Custom scrollbar for the modal */
+.stem-modal::-webkit-scrollbar {
+  width: 4px;
+}
+
+.stem-modal::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+.stem-modal::-webkit-scrollbar-thumb {
+  background: #27272a;
+}
+
+.stem-modal::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .stem-modal {
     max-width: 100%;
-    border-radius: 12px;
   }
 
   .stem-modal-row {
     grid-template-columns: 1fr;
   }
 
-  .stem-modal-header,
+  .stem-modal-header {
+    padding: 24px 20px 16px 20px;
+  }
+
   .stem-modal-form {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px 20px 24px 20px;
   }
 
   .stem-modal-input {
-    height: 44px;
-    font-size: 14px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .stem-modal-title {
+    font-size: 12px;
+    letter-spacing: 0.1em;
   }
 }
 

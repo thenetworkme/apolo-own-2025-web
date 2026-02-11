@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
 const socialLinks = [
     { name: 'Instagram', url: 'https://instagram.com/apolo27' },
     { name: 'LinkedIn', url: 'https://linkedin.com/company/apolo27' },
-    { name: 'YouTube', url: 'https://youtube.com/@apolo27' },
+    { name: 'YouTube', url: 'https://www.youtube.com/@apolo2730' },
     { name: 'TikTok', url: 'https://tiktok.com/@apolo27' },
 ];
 

@@ -4,10 +4,12 @@ import { useState } from 'react';
 import { Globe } from '@/components/ui/globe';
 import { useLanguage } from '@/context/LanguageContext';
 import STEMVisitModal from '@/components/STEMVisitModal';
+import SponsorModal from '@/components/SponsorModal';
 
 export default function Footer() {
     const { t } = useLanguage();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isSponsorModalOpen, setIsSponsorModalOpen] = useState(false);
 
     return (
         <>
@@ -37,13 +39,13 @@ export default function Footer() {
 
                     {/* Buttons - Vertical stack */}
                     <div className="footer-buttons flex flex-col gap-2 sm:gap-3">
-                        <a
-                            href="#sponsor"
+                        <button
+                            onClick={() => setIsSponsorModalOpen(true)}
                             className="footer-btn group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400"
                         >
                             <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
                             <span className="relative z-10">{t('footer.sponsorButton')}</span>
-                        </a>
+                        </button>
                         <button
                             onClick={() => setIsModalOpen(true)}
                             className="footer-btn group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400"
@@ -88,6 +90,12 @@ export default function Footer() {
             <STEMVisitModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
+            />
+
+            {/* Sponsor Modal */}
+            <SponsorModal
+                isOpen={isSponsorModalOpen}
+                onClose={() => setIsSponsorModalOpen(false)}
             />
         </>
     );

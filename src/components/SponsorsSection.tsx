@@ -7,16 +7,15 @@ import { useLanguage } from '@/context/LanguageContext';
 
 // All sponsor logos from public/logos
 const sponsors = [
-    { name: '3D Printers RD', logo: '/logos/3dprintersrd.webp' },
-    { name: 'Wind Telecom', logo: '/logos/Logo-Wind-Blanco.webp' },
-    { name: 'AES', logo: '/logos/aes.webp' },
-    { name: 'BM Cargo', logo: '/logos/bmcargo.webp' },
+    { name: 'Asobal', logo: '/logos/asobal.webp' },
+    { name: 'Banreservas', logo: '/logos/banreservas.webp' },
+    { name: 'Bm Cargo', logo: '/logos/bmcargo.webp' },
     { name: 'Juventud', logo: '/logos/juventud.webp' },
-    { name: 'La Deli', logo: '/logos/ladeli.webp' },
-    { name: 'Max', logo: '/logos/max.webp' },
-    { name: 'Ole', logo: '/logos/ole.webp' },
-    { name: 'Pabe Comercial', logo: '/logos/pabecomercial.webp' },
-    { name: 'Thomas', logo: '/logos/thomas.webp' },
+    { name: 'Bocel', logo: '/logos/bocel.webp' },
+    { name: 'Ctav', logo: '/logos/ctav.webp' },
+    { name: 'Galicia', logo: '/logos/galicia.webp' },
+    { name: 'Pissani', logo: '/logos/pissa.webp' },
+    { name: 'PrintPlus', logo: '/logos/printplus.webp' },
 ];
 
 // Animation variants for the section
