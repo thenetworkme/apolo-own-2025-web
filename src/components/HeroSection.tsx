@@ -62,7 +62,7 @@ export default function HeroSection() {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     poster="/images/moon_poster.jpg"
                     className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
                 >

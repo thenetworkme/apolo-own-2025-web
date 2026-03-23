@@ -86,6 +86,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         }
     }, []);
 
+    // Update HTML lang attribute when language changes
+    useEffect(() => {
+        if (typeof document !== 'undefined') {
+            document.documentElement.lang = language;
+        }
+    }, [language]);
+
     // Translation function - supports nested keys like "hero.title"
     const t = useCallback((key: string): string => {
         const keys = key.split('.');

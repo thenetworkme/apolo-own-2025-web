@@ -48,7 +48,7 @@ export default function SponsorsSection() {
         <section
             id="sponsors"
             ref={sectionRef}
-            className="section-spacing relative w-full bg-black overflow-hidden !pt-0 -mt-12 sm:-mt-16 relative z-0"
+            className="section-spacing relative w-full bg-black overflow-hidden !pt-12 !mt-24 sm:!mt-32 relative z-0"
         >
             <motion.div
                 className="relative z-10"

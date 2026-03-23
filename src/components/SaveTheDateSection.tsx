@@ -36,7 +36,8 @@ export default function SaveTheDateSection() {
         <section
             id="save-the-date"
             ref={sectionRef}
-            className="relative w-full py-32 sm:py-40 md:py-48 lg:py-56 bg-black overflow-hidden"
+            className="relative w-full bg-black overflow-hidden"
+            style={{ paddingTop: 'clamp(20px, 4vw, 60px)', paddingBottom: 'var(--section-gap, clamp(60px, 8vw, 120px))' }}
         >
             {/* Content Container */}
             <motion.div
@@ -66,18 +67,15 @@ export default function SaveTheDateSection() {
                     NASA HERC 2026
                 </TextAnimate>
 
-                {/* Countdown Timer - 70% margin-top */}
+                {/* Countdown Timer */}
                 <motion.div
                     variants={textVariants}
                     className="w-[85%] sm:w-[80%] md:w-[75%] lg:w-[70%] flex justify-center"
-                    style={{ marginTop: '70px' }}
+                    style={{ marginTop: 'clamp(40px, 6vw, 80px)' }}
                 >
                     <CountdownTimer />
                 </motion.div>
             </motion.div>
-
-            {/* Extra space at the bottom */}
-            <div className="h-8 sm:h-12 md:h-16 lg:h-20" />
         </section>
     );
 }

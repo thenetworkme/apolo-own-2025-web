@@ -10,32 +10,32 @@ const rovers = [
     {
         year: '2019',
         name: 'Genesis',
-        description: 'Nuestro primer rover. El comienzo de un sueño.',
-        achievement: 'Primera participación',
+        descriptionKey: 'rovers.genesis.description',
+        achievementKey: 'rovers.genesis.achievement',
         image: '/images/rover-2019.png',
         position: 'left'
     },
     {
         year: '2022',
         name: 'Evolution',
-        description: 'Diseño mejorado con mejor rendimiento.',
-        achievement: 'Top 10 mundial',
+        descriptionKey: 'rovers.evolution.description',
+        achievementKey: 'rovers.evolution.achievement',
         image: '/images/rover-2022.png',
         position: 'right'
     },
     {
         year: '2024',
         name: 'Triumph',
-        description: 'El rover que nos llevó al podio mundial.',
-        achievement: '2do lugar mundial',
+        descriptionKey: 'rovers.triumph.description',
+        achievementKey: 'rovers.triumph.achievement',
         image: '/images/rover-2024.png',
         position: 'left'
     },
     {
         year: '2025',
         name: 'Legacy',
-        description: 'Nuestro rover más avanzado hasta la fecha.',
-        achievement: '6 premios',
+        descriptionKey: 'rovers.legacy.description',
+        achievementKey: 'rovers.legacy.achievement',
         image: '/images/rover-2025.png',
         position: 'right'
     }
@@ -62,7 +62,7 @@ const textVariants = {
 };
 
 // Individual Rover Card Component
-function RoverCard({ rover, index }: { rover: typeof rovers[0]; index: number }) {
+function RoverCard({ rover, index, t }: { rover: typeof rovers[0]; index: number; t: (key: string) => string }) {
     const cardRef = useRef(null);
     const isInView = useInView(cardRef, { once: true, margin: "-100px" });
 
@@ -114,16 +114,16 @@ function RoverCard({ rover, index }: { rover: typeof rovers[0]; index: number })
 
                 {/* Description */}
                 <p className="text-zinc-400 text-base lg:text-lg mb-4 max-w-md">
-                    {rover.description}
+                    {t(rover.descriptionKey)}
                 </p>
 
                 {/* Achievement Badge */}
                 <div className={`inline-flex items-center gap-2 px-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded-full ${isLeft ? '' : 'flex-row-reverse'}`}>
-                    <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                     <span className="text-zinc-300 text-sm font-medium">
-                        {rover.achievement}
+                        {t(rover.achievementKey)}
                     </span>
                 </div>
             </motion.div>
@@ -159,10 +159,10 @@ export default function RoverRoadmapSection() {
                     transition={{ duration: 0.8 }}
                 >
                     <p className="text-zinc-500 text-xs sm:text-sm font-light tracking-[0.3em] uppercase mb-4">
-                        Nuestra Evolución
+                        {t('rovers.sectionSubtitle')}
                     </p>
                     <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide">
-                        El Camino hacia la Gloria
+                        {t('rovers.sectionTitle')}
                     </h2>
                 </motion.div>
             </div>
@@ -182,7 +182,7 @@ export default function RoverRoadmapSection() {
                 {/* Rover Cards */}
                 <div className="relative z-10">
                     {rovers.map((rover, index) => (
-                        <RoverCard key={rover.year} rover={rover} index={index} />
+                        <RoverCard key={rover.year} rover={rover} index={index} t={t} />
                     ))}
                 </div>
 

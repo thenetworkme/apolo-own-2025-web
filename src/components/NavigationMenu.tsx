@@ -126,7 +126,7 @@ export default function NavigationMenu() {
                             className="fixed top-0 right-0 h-full w-full sm:w-[85%] md:w-[50%] lg:w-[35%] xl:w-[30%] bg-zinc-950 z-50 flex flex-col overflow-hidden"
                         >
                             {/* Header */}
-                            <div className="flex items-center justify-between px-6 sm:px-8 md:px-10 lg:px-12 pt-6 sm:pt-8 pb-4 mt-4 sm:mt-6" style={{ marginLeft: '2rem', marginRight: '2rem', marginTop: '2rem' }}>
+                            <div className="flex items-center justify-between px-6 sm:px-8 md:px-10 lg:px-12 pt-6 sm:pt-8 pb-4 mx-8 mt-8">
                                 {/* Menu Label */}
                                 <div className="flex items-center gap-3">
                                     <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-500" />

@@ -3,16 +3,7 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
-import { OrbitingCircles } from '@/components/ui/orbiting-circles';
 import { useLanguage } from '@/context/LanguageContext';
-import Marquee from '@/components/ui/Marquee';
-import TestimonialCard from '@/components/TestimonialCard';
-import {
-    IconBrandInstagram,
-    IconBrandTiktok,
-    IconBrandYoutube,
-    IconBrandLinkedin
-} from '@tabler/icons-react';
 
 // Animation variants
 const containerVariants = {
@@ -52,59 +43,10 @@ const orbitVariants = {
     }
 };
 
-// Testimonials data with gradient colors
-const testimonials = [
-    {
-        name: "María",
-        username: "maria",
-        quote: "I don't know what to say. I'm speechless. This is amazing.",
-        gradientFrom: "from-pink-500",
-        gradientTo: "to-violet-500"
-    },
-    {
-        name: "Carlos",
-        username: "carlos",
-        quote: "I'm at a loss for words. This is amazing. I love it.",
-        gradientFrom: "from-green-500",
-        gradientTo: "to-emerald-500"
-    },
-    {
-        name: "Ana",
-        username: "ana",
-        quote: "I've never seen anything like this before. It's amazing. I love it.",
-        gradientFrom: "from-orange-500",
-        gradientTo: "to-yellow-500"
-    },
-    {
-        name: "Pedro",
-        username: "pedro",
-        quote: "I'm at a loss for words. This is amazing. I love it.",
-        gradientFrom: "from-blue-500",
-        gradientTo: "to-cyan-500"
-    },
-    {
-        name: "Laura",
-        username: "laura",
-        quote: "I'm at a loss for words. This is amazing. I love it.",
-        gradientFrom: "from-red-500",
-        gradientTo: "to-pink-500"
-    },
-    {
-        name: "Roberto",
-        username: "roberto",
-        quote: "I'm at a loss for words. This is amazing. I love it.",
-        gradientFrom: "from-purple-500",
-        gradientTo: "to-indigo-500"
-    }
-];
-
 export default function SocialMediaSection() {
-    const { t, language } = useLanguage();
+    const { t } = useLanguage();
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-
-    const firstRow = testimonials.slice(0, 3);
-    const secondRow = testimonials.slice(3);
 
     return (
         <section
@@ -153,6 +95,7 @@ export default function SocialMediaSection() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-bento-card social-card-instagram"
+                                aria-label="Visita nuestro Instagram"
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
                             >
@@ -167,6 +110,7 @@ export default function SocialMediaSection() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-bento-card social-card-linkedin"
+                                aria-label="Visita nuestro LinkedIn"
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
                             >
@@ -181,6 +125,7 @@ export default function SocialMediaSection() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-bento-card social-card-tiktok"
+                                aria-label="Visita nuestro TikTok"
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
                             >
@@ -195,6 +140,7 @@ export default function SocialMediaSection() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="social-bento-card social-card-youtube"
+                                aria-label="Visita nuestro YouTube"
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
                             >
@@ -204,82 +150,7 @@ export default function SocialMediaSection() {
                             </motion.a>
                         </div>
                     </motion.div>
-
-                    {/* COMMENTED OUT: Original Orbiting Circles Animation */}
-                    {/* <motion.div
-                        className="flex-1 flex justify-center lg:justify-end"
-                        variants={orbitVariants}
-                        initial="hidden"
-                        animate={isInView ? "visible" : "hidden"}
-                    >
-                        <div className="relative aspect-square h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center scale-[0.65] sm:scale-75 md:scale-90 lg:scale-100">
-                            <OrbitingCircles iconSize={50} radius={180} duration={30} path={true}>
-                                <a href="https://linkedin.com/company/apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-full bg-blue-600 hover:scale-110 transition-transform duration-300">
-                                    <FaLinkedinIn className="w-5 h-5 text-white" />
-                                </a>
-                                <a href="https://youtube.com/@apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-full bg-red-600 hover:scale-110 transition-transform duration-300">
-                                    <FaYoutube className="w-5 h-5 text-white" />
-                                </a>
-                            </OrbitingCircles>
-                            <OrbitingCircles iconSize={40} radius={110} reverse speed={1.5} duration={25} path={true}>
-                                <a href="https://instagram.com/apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 hover:scale-110 transition-transform duration-300">
-                                    <FaInstagram className="w-5 h-5 text-white" />
-                                </a>
-                                <a href="https://tiktok.com/@apolo27" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:scale-110 transition-transform duration-300">
-                                    <FaTiktok className="w-5 h-5 text-white" />
-                                </a>
-                            </OrbitingCircles>
-                            <OrbitingCircles iconSize={20} radius={40} duration={20} path={true}>
-                                <div />
-                            </OrbitingCircles>
-                        </div>
-                    </motion.div> */}
                 </div>
-
-                {/* Testimonials Section */}
-                <motion.div
-                    className="mt-16 lg:mt-24"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                >
-
-                    {/* First row - scrolling left */}
-                    {/* <div className="relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-                        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-                        <Marquee pauseOnHover className="[--duration:50s]">
-                            {firstRow.map((testimonial, idx) => (
-                                <TestimonialCard
-                                    key={idx}
-                                    name={testimonial.name}
-                                    username={testimonial.username}
-                                    quote={testimonial.quote}
-                                    gradientFrom={testimonial.gradientFrom}
-                                    gradientTo={testimonial.gradientTo}
-                                />
-                            ))}
-                        </Marquee>
-                    </div> */}
-
-                    {/* Second row - scrolling right */}
-                    {/* <div className="relative" style={{ marginTop: '28px' }}>
-                        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-                        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-                        <Marquee pauseOnHover reverse className="[--duration:45s]">
-                            {secondRow.map((testimonial, idx) => (
-                                <TestimonialCard
-                                    key={idx}
-                                    name={testimonial.name}
-                                    username={testimonial.username}
-                                    quote={testimonial.quote}
-                                    gradientFrom={testimonial.gradientFrom}
-                                    gradientTo={testimonial.gradientTo}
-                                />
-                            ))}
-                        </Marquee>
-                    </div> */}
-                </motion.div>
             </motion.div>
         </section>
     );

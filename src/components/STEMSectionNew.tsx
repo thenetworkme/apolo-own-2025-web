@@ -14,25 +14,8 @@ const stemImages = [
 ];
 
 export default function STEMSectionNew() {
-    const { language } = useLanguage();
+    const { t } = useLanguage();
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const content = {
-        es: {
-            subtitle: 'Impacto Educativo',
-            title: 'Aportando al',
-            titleHighlight: 'Futuro STEM',
-            ctaButton: 'Solicita una Visita STEM',
-        },
-        en: {
-            subtitle: 'Educational Impact',
-            title: 'Contributing to the',
-            titleHighlight: 'STEM Future',
-            ctaButton: 'Request a STEM Visit',
-        }
-    };
-
-    const t = content[language];
 
     return (
         <>
@@ -40,19 +23,18 @@ export default function STEMSectionNew() {
                 id="stem"
                 className="relative w-full stem-section-top-spacing"
             >
-                {/* Title Section */}
                 {/* Title + Gallery Container */}
                 <div
                     className="stem-gallery-container flex flex-col items-center justify-center pt-20"
                 >
                     <div className="text-center mb-0 relative z-10 pointer-events-none">
                         <p className="text-zinc-400 text-xs sm:text-sm font-light tracking-[0.3em] uppercase mb-4">
-                            {t.subtitle}
+                            {t('stem.subtitle')}
                         </p>
                         <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                            {t.title}{' '}
+                            {t('stem.title')}{' '}
                             <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
-                                {t.titleHighlight}
+                                {t('stem.titleHighlight')}
                             </span>
                         </h2>
                     </div>
@@ -66,14 +48,15 @@ export default function STEMSectionNew() {
                     />
                 </div>
 
-                {/* CTA Button - Exact same style as Footer but larger for this section */}
+                {/* CTA Button */}
                 <div className="w-full flex justify-center items-center pb-12 relative z-20 force-stem-spacing px-4">
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="stem-cta-btn group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400 rounded-sm w-full sm:w-auto"
+                        className="stem-cta-btn group relative border border-red-500 bg-transparent text-red-500 font-semibold text-center overflow-hidden transition-all duration-300 ease-out hover:text-white hover:border-red-400 rounded-sm w-[90%] max-w-[320px] sm:max-w-none sm:w-auto"
+                        aria-label={t('stem.ctaButton')}
                     >
                         <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
-                        <span className="relative z-10">{t.ctaButton}</span>
+                        <span className="relative z-10">{t('stem.ctaButton')}</span>
                     </button>
                 </div>
             </section>

@@ -13,7 +13,7 @@ export default function Footer() {
 
     return (
         <>
-            <section className="footer-section relative w-full bg-black overflow-hidden">
+            <footer className="footer-section relative w-full bg-black overflow-hidden" role="contentinfo">
 
                 {/* Centered Header Text */}
                 <div className="footer-header-container absolute w-full z-30">
@@ -84,7 +84,7 @@ export default function Footer() {
                         />
                     </div>
                 </div>
-            </section>
+            </footer>
 
             {/* STEM Visit Modal */}
             <STEMVisitModal

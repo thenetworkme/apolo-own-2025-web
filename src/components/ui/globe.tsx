@@ -120,13 +120,13 @@ export function Globe({
       globe = createGlobe(canvasRef.current, {
         ...config,
         devicePixelRatio: effectiveDpr,
-        width: width * 2,
-        height: width * 2,
+        width: width * effectiveDpr,
+        height: width * effectiveDpr,
         onRender: (state) => {
           if (!pointerInteracting.current) phi += 0.005
           state.phi = phi + rs.get()
-          state.width = width * 2
-          state.height = width * 2
+          state.width = width * effectiveDpr
+          state.height = width * effectiveDpr
         },
       })
 

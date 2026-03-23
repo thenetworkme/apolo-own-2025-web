@@ -32,5 +32,38 @@
         "subtitle": "Join APOLO 27 and help us inspire the next generation of space explorers",
         "sponsorButton": "Become a Sponsor",
         "stemButton": "Request a STEM Visit"
+    },
+    "stem": {
+        "subtitle": "Educational Impact",
+        "title": "Contributing to the",
+        "titleHighlight": "STEM Future",
+        "ctaButton": "Request a STEM Visit"
+    },
+    "rovers": {
+        "sectionSubtitle": "Our Evolution",
+        "sectionTitle": "The Path to Glory",
+        "genesis": {
+            "description": "Our first rover. The beginning of a dream.",
+            "achievement": "First participation"
+        },
+        "evolution": {
+            "description": "Improved design with better performance.",
+            "achievement": "Top 10 worldwide"
+        },
+        "triumph": {
+            "description": "The rover that took us to the world podium.",
+            "achievement": "2nd place worldwide"
+        },
+        "legacy": {
+            "description": "Our most advanced rover to date.",
+            "achievement": "6 awards"
+        }
+    },
+    "hallOfFame": {
+        "enter": "Enter Hall of Fame"
+    },
+    "countdown": {
+        "eventPassed": "The event has already taken place!",
+        "seeResults": "See results"
     }
 }
