@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, type Variants } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
-import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Maximize, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const fadeUpVariant: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -46,28 +46,30 @@ const TextCard = ({ title, text }: { title: string, text: string }) => (
 const ImageCard = ({ title, image, onOpenModal }: { title: string, image: string, onOpenModal: (img: string) => void }) => (
     <div
         onClick={() => onOpenModal(image)}
-        className="w-full h-full min-h-[280px] md:min-h-[350px] relative rounded-2xl overflow-hidden border border-zinc-800/60 group cursor-pointer shadow-lg bg-[#050505] transition-all duration-500 hover:border-red-500/30 hover:shadow-[0_8px_40px_rgba(220,38,38,0.08)] hover:-translate-y-1"
+        className="w-full h-full min-h-[280px] md:min-h-[350px] relative rounded-2xl overflow-hidden border border-zinc-800/60 group cursor-pointer shadow-lg bg-[#050505] transition-all duration-700 hover:border-red-500/30 hover:shadow-[0_8px_40px_rgba(220,38,38,0.12)] hover:-translate-y-1"
     >
         <Image
             src={image}
             alt={title}
             fill
-            className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+            className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
         />
-        <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.8)] pointer-events-none transition-opacity duration-500 group-hover:opacity-40" />
-        {/* Refined Hover Overlay with Zoom icon */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-            <div className="w-14 h-14 rounded-full border border-white/20 bg-black/40 backdrop-blur-lg flex items-center justify-center transform scale-75 group-hover:scale-100 transition-all duration-500 ease-out shadow-[0_0_30px_rgba(0,0,0,0.6)]">
-                <ZoomIn size={22} className="text-white/90" strokeWidth={1.5} />
+        <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.8)] pointer-events-none transition-opacity duration-700 group-hover:opacity-60" />
+        
+        {/* Delicate Maximize icon hover */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none z-10">
+            <div className="w-14 h-14 flex items-center justify-center rounded-full bg-black/5 backdrop-blur-[2px] border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.8)] transform scale-50 group-hover:scale-100 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                <Maximize size={22} className="text-white/80" strokeWidth={1} />
             </div>
         </div>
+        
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/80 to-transparent pointer-events-none transition-opacity duration-700 group-hover:opacity-50" />
     </div>
 );
 
 const CombinedCard = ({ title, text, image, onOpenModal }: { title: string, text: string, image: string, onOpenModal: (img: string) => void }) => (
-    <div className="w-full h-full bg-gradient-to-br from-zinc-950/95 via-zinc-950/90 to-zinc-900/80 backdrop-blur-md border border-zinc-800/60 rounded-2xl relative group transition-all duration-500 hover:border-red-500/40 hover:shadow-[0_8px_40px_rgba(220,38,38,0.08)] hover:-translate-y-1 flex flex-col overflow-hidden text-center items-center shadow-lg">
+    <div className="w-full h-full bg-gradient-to-br from-zinc-950/95 via-zinc-950/90 to-zinc-900/80 backdrop-blur-md border border-zinc-800/60 rounded-2xl relative group transition-all duration-700 hover:border-red-500/30 hover:shadow-[0_8px_40px_rgba(220,38,38,0.12)] hover:-translate-y-1 flex flex-col overflow-hidden text-center items-center shadow-lg">
         <div className="!p-12 sm:!p-16 flex-grow flex flex-col items-center justify-center w-full">
             <h4 className="text-xl sm:text-2xl font-black text-white uppercase tracking-wider mb-3 group-hover:text-red-500 transition-colors duration-300 w-full">
                 {title}
@@ -86,15 +88,15 @@ const CombinedCard = ({ title, text, image, onOpenModal }: { title: string, text
                 src={image}
                 alt={title}
                 fill
-                className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
             />
-            {/* Refined Hover Overlay with Zoom icon */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-10">
-                <div className="w-14 h-14 rounded-full border border-white/20 bg-black/40 backdrop-blur-lg flex items-center justify-center transform scale-75 group-hover:scale-100 transition-all duration-500 ease-out shadow-[0_0_30px_rgba(0,0,0,0.6)]">
-                    <ZoomIn size={22} className="text-white/90" strokeWidth={1.5} />
+            {/* Delicate Maximize icon hover */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none z-10">
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-black/5 backdrop-blur-[2px] border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.8)] transform scale-50 group-hover:scale-100 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                    <Maximize size={22} className="text-white/80" strokeWidth={1} />
                 </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none transition-opacity duration-700 group-hover:opacity-40" />
         </div>
     </div>
 );
@@ -175,7 +177,7 @@ export default function TimelineSection() {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 uppercase tracking-tighter text-white text-center w-full">
                         {translations.timeline.title}
                     </h2>
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-medium text-zinc-500 text-center w-full font-[family-name:var(--font-dancing-script)] mt-2">
+                    <h3 className="text-sm sm:text-base md:text-lg font-mono font-light tracking-[0.3em] uppercase text-zinc-500 text-center w-full mt-2">
                         {translations.timeline.ourTimeline}
                     </h3>
                 </motion.div>
@@ -207,12 +209,12 @@ export default function TimelineSection() {
                                 >
                                     {/* Center Year Marker for ALL SCREENS (Guarantees perfect alignment) */}
                                     <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 lg:w-16 lg:h-16 w-14 h-14 rounded-full bg-black border-2 border-zinc-800 group-hover:border-red-500 transition-colors duration-500 items-center justify-center z-20 shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-                                        <span className="text-white font-[family-name:var(--font-dancing-script)] font-bold text-xl lg:text-2xl group-hover:text-red-500 transition-colors duration-500">{item.year}</span>
+                                        <span className="text-white font-[family-name:var(--font-poppins)] font-bold text-xl lg:text-2xl group-hover:text-red-500 transition-colors duration-500">{item.year}</span>
                                     </div>
 
                                     <div className="md:hidden flex justify-center items-center mb-10 w-full relative z-30">
                                         <div className="w-16 h-16 rounded-full bg-black border-2 border-zinc-800 group-hover:border-red-500 transition-colors duration-300 shadow-[0_0_20px_rgba(0,0,0,0.8)] flex items-center justify-center shrink-0 z-20">
-                                            <span className="text-white font-[family-name:var(--font-dancing-script)] font-bold text-xl">{item.year}</span>
+                                            <span className="text-white font-[family-name:var(--font-poppins)] font-bold text-xl">{item.year}</span>
                                         </div>
                                     </div>
 
@@ -245,13 +247,13 @@ export default function TimelineSection() {
                         >
                             {/* Desktop Center Year Marker */}
                             <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-black border-2 border-zinc-800 group-hover:border-red-500 transition-colors duration-500 items-center justify-center z-20 shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-                                <span className="text-white font-[family-name:var(--font-dancing-script)] font-bold text-3xl group-hover:text-red-500">{year2025.year}</span>
+                                <span className="text-white font-[family-name:var(--font-poppins)] font-bold text-3xl group-hover:text-red-500">{year2025.year}</span>
                             </div>
 
                             {/* Mobile Year Badge */}
                             <div className="md:hidden flex justify-center items-center mb-10 w-full relative z-30">
                                 <div className="w-20 h-20 rounded-full bg-black border-2 border-zinc-800 shadow-[0_0_25px_rgba(0,0,0,0.8)] flex items-center justify-center shrink-0 z-20">
-                                    <span className="text-white font-[family-name:var(--font-dancing-script)] font-bold text-3xl">{year2025.year}</span>
+                                    <span className="text-white font-[family-name:var(--font-poppins)] font-bold text-3xl">{year2025.year}</span>
                                 </div>
                             </div>
 
@@ -321,13 +323,11 @@ export default function TimelineSection() {
                                 damping: 25,
                                 mass: 0.8
                             }}
-                            className="relative w-full max-w-3xl md:max-w-5xl aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.8)] border border-zinc-700/40 cursor-default bg-[#050505]"
+                            className="relative w-[95vw] h-[75vh] md:max-w-6xl cursor-default"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {/* Subtle animated red glow border */}
-                            <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-red-600/20 via-transparent to-red-600/10 pointer-events-none z-0 animate-pulse" style={{ animationDuration: '4s' }} />
 
-                            <div className="relative w-full h-full rounded-2xl overflow-hidden z-10">
+                            <div className="relative w-full h-full z-10">
                                 <Image
                                     src={modalImage}
                                     alt="Expanded View"

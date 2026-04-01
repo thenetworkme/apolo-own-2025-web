@@ -88,7 +88,7 @@ export default function SaveTheDateSection() {
                             </svg>
                         </div>
                         <span className="youtube-watch-text">
-                            {language === 'es' ? 'Ver el Reel' : 'Watch The Reel'}
+                            {language === 'es' ? 'Únete a la aventura' : 'Join the adventure'}
                         </span>
                     </a>
                 </motion.div>

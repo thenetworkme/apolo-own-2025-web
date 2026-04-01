@@ -71,7 +71,7 @@ export default function SocialMediaSection() {
                         <p className="text-zinc-500 text-xs sm:text-sm font-mono tracking-[0.3em] uppercase mb-4">
                             {t('social.subtitle')}
                         </p>
-                        <h2 className="social-title text-white font-[family-name:var(--font-dancing-script)] font-medium mb-6 mt-2 text-4xl sm:text-5xl md:text-6xl">
+                        <h2 className="social-title text-white font-bold mb-6 mt-2 text-3xl sm:text-4xl md:text-5xl">
                             {t('social.title')}
                         </h2>
                         <p className="social-description text-zinc-400">

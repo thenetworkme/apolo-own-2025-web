@@ -65,7 +65,7 @@ export default function SponsorsSection() {
                     <p className="text-zinc-500 text-xs sm:text-sm font-mono tracking-[0.3em] uppercase mb-4">
                         {t('sponsors.subtitle') || 'Patrocinadores Oficiales'}
                     </p>
-                    <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-medium font-[family-name:var(--font-dancing-script)] mt-2">
+                    <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mt-2">
                         {t('sponsors.title') || 'Nuestros Aliados'}
                     </h2>
                 </motion.div>
