@@ -117,6 +117,8 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
+        {/* Preload hero video for faster LCP */}
+        <link rel="preload" as="video" href="/videos/moon_cinematic6.webm" type="video/webm" />
         {/* Injecting JSON-LD structurally to the DOM */}
         <script
           type="application/ld+json"
